@@ -10,10 +10,11 @@ import residencial2 from '../assets/img/trabajos/malla_Residencial/2.jpg'
 import residencial3 from '../assets/img/trabajos/malla_Residencial/3.jpg'
 import residencial4 from '../assets/img/trabajos/malla_Residencial/4.jpg'
 import residencial5 from '../assets/img/trabajos/malla_Residencial/5.jpg'
-import convenio1 from '../assets/img/trabajos/convenios/tarjeta_Vecino_viveLaForida_Mallas_Saru_1.jpg'
-import convenio2 from '../assets/img/trabajos/convenios/tarjeta_Vecino_viveLaForida_Mallas_Saru_2.jpg'
-import convenio3 from '../assets/img/trabajos/convenios/tarjeta_Vecino_viveLaForida_Mallas_Saru_3.jpg'
-import convenio4 from '../assets/img/trabajos/convenios/tarjeta_Vecino_viveLaForida_Mallas_Saru_4.jpg'
+import ventana1 from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20251028-WA0054.jpg'
+import ventana2 from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260115-WA0059.jpg'
+import ventana3 from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260115-WA0061.jpg'
+import ventana4 from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260123-WA0062.jpg'
+import ventana5 from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260325-WA0051.jpg'
 import cliente1 from '../assets/img/trabajos/clientes_Satisfechos/1.jpg'
 import cliente2 from '../assets/img/trabajos/clientes_Satisfechos/2.jpg'
 import cliente3 from '../assets/img/trabajos/clientes_Satisfechos/3.jpg'
@@ -35,161 +36,118 @@ export type PortfolioGroup = {
 }
 
 export const navLinks = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#servicios', label: 'Servicios' },
+  { href: '#servicios', label: 'Soluciones' },
+  { href: '#convenios', label: 'Convenios' },
+  { href: '#protocolo', label: 'Cómo trabajamos' },
   { href: '#trabajos', label: 'Trabajos' },
+  { href: '#seguridad', label: 'Seguridad' },
   { href: '#nosotros', label: 'Nosotros' },
-  { href: '#contacto', label: 'Contacto' },
 ]
 
 export const services = [
   {
-    id: 'mallas-para-edificios',
-    icon: 'fa-building',
-    title: 'Mallas para Edificios',
+    id: 'balcones-edificios',
+    title: 'Balcones y edificios',
     description:
-      'Instalación profesional de mallas de seguridad en balcones, ventanas y áreas comunes de edificios y departamentos.',
+      'Protección discreta para departamentos, terrazas, logias y espacios comunes, considerando el soporte y las reglas del condominio.',
+    detail: 'Familias · administradores · comunidades',
   },
   {
-    id: 'mallas-residenciales',
-    icon: 'fa-home',
-    title: 'Mallas Residenciales',
+    id: 'ventanas',
+    title: 'Ventanas y vanos',
     description:
-      'Protección para casas, terrazas, jardines y piscinas con materiales resistentes y duraderos.',
+      'Soluciones para ventanas correderas, abatibles y otros puntos de riesgo, con revisión previa del marco y su forma de apertura.',
+    detail: 'Niños · personas mayores · cuidados especiales',
   },
   {
-    id: 'convenios',
-    icon: 'fa-tags',
-    title: 'Convenios',
+    id: 'mascotas',
+    title: 'Seguridad para mascotas',
     description:
-      'Si tienes tu tarjeta Vecino, obtienes descuentos especiales en nuestros servicios.',
+      'Evaluación del espacio según tamaño, conducta y exposición de la mascota para reducir puntos de fuga y caída.',
+    detail: 'Gatos · perros pequeños · espacios protegidos',
   },
   {
-    id: 'clientes-satisfechos',
-    icon: 'fa-paw',
-    title: 'Seguridad para Mascotas',
+    id: 'mantencion-recambio',
+    title: 'Inspección y recambio',
     description:
-      'Mallas y protecciones para que tus mascotas disfruten balcones y ventanas de forma segura.',
+      'Revisión de tensión, fijaciones, desgaste visible y daños por uso, obras o intemperie, con recomendación documentada.',
+    detail: 'Diagnóstico · mantención · renovación',
   },
 ]
 
-const buildingImages = [edificio1, edificio2, edificio3, edificio4, edificio5, edificio6, edificio7]
-const residentialImages = [residencial1, residencial2, residencial3, residencial4, residencial5]
-const agreementImages = [convenio1, convenio2, convenio3, convenio4]
-const customerImages = [cliente1, cliente2, cliente3, cliente4, cliente5]
+const makeImages = (images: string[], title: string, description: string): GalleryImage[] =>
+  images.map((src, index) => ({
+    src,
+    title: `${title} · proyecto ${index + 1}`,
+    description,
+  }))
 
 export const portfolioGroups: PortfolioGroup[] = [
   {
-    title: 'Mallas para Balcones',
-    description: 'Mallas de seguridad en balcones y terrazas',
-    alt: 'Malla de seguridad instalada en un balcón',
+    title: 'Balcones en altura',
+    description: 'Instalaciones en departamentos y terrazas',
+    alt: 'Malla de seguridad instalada en un balcón de edificio',
     cover: edificio1,
-    images: buildingImages.map((src, index) => ({
-      src,
-      title: index < 3 ? 'Balcón Mallas Saru Chile' : 'Balcones seguros, vistas intactas',
-      description: [
-        'Tu balcón, seguro y libre.',
-        'Protección sin perder la vista.',
-        'Disfruta la altura con tranquilidad.',
-      ][index] ?? 'Seguridad discreta para disfrutar la altura.',
-    })),
+    images: makeImages(
+      [edificio1, edificio2, edificio3, edificio4, edificio5, edificio6, edificio7],
+      'Protección de balcón',
+      'Trabajo real de Mallas Saru en un espacio residencial en altura.',
+    ),
   },
   {
-    title: 'Mallas para Ventanas',
-    description: 'Protección para departamentos y casas',
-    alt: 'Ventana protegida con una malla de seguridad',
+    title: 'Ventanas protegidas',
+    description: 'Soluciones ajustadas a cada tipo de vano',
+    alt: 'Ventana protegida con malla de seguridad',
+    cover: ventana5,
+    images: makeImages(
+      [ventana1, ventana2, ventana3, ventana4, ventana5],
+      'Protección de ventana',
+      'Instalación adaptada al marco y al sistema de apertura existente.',
+    ),
+  },
+  {
+    title: 'Espacios residenciales',
+    description: 'Casas, terrazas y zonas de uso familiar',
+    alt: 'Malla de seguridad instalada en una residencia',
     cover: residencial1,
-    images: residentialImages.map((src, index) => ({
-      src,
-      title: [
-        'Tu ventana segura y libre',
-        'Disfruta la vista con tranquilidad',
-        'Ventanas protegidas, vistas intactas',
-        'Seguridad discreta para cada ventana',
-        'Protección de confianza para tu hogar',
-      ][index],
-      description: 'Instalación residencial de Mallas Saru.',
-    })),
+    images: makeImages(
+      [residencial1, residencial2, residencial3, residencial4, residencial5],
+      'Protección residencial',
+      'Solución para un punto de riesgo en vivienda particular.',
+    ),
   },
   {
-    title: 'Convenios',
-    description: 'Descuentos con la Tarjeta Vecino Vive La Florida',
-    alt: 'Convenio de Mallas Saru con Tarjeta Vecino Vive La Florida',
-    cover: convenio4,
-    images: agreementImages.map((src) => ({
-      src,
-      title: 'Convenio Tarjeta Vecino Vive La Florida',
-      description: 'Descuentos especiales en nuestros servicios para vecinos adheridos.',
-    })),
-  },
-  {
-    title: 'Clientes Satisfechos',
+    title: 'Familias y mascotas',
     description: 'Protección para quienes más quieres',
-    alt: 'Mascota disfrutando un espacio protegido por Mallas Saru',
+    alt: 'Mascota en un espacio protegido por Mallas Saru',
     cover: cliente1,
-    images: customerImages.map((src, index) => ({
-      src,
-      title: [
-        'Seguridad para tus seres queridos',
-        'Protección para gatos curiosos',
-        'Evita caídas, gana tranquilidad',
-        'Tranquilidad garantizada',
-        'Protege lo que más importa',
-      ][index],
-      description: 'Espacios más seguros gracias a Mallas Saru.',
-    })),
-  },
-]
-
-export const features = [
-  {
-    icon: 'fa-check-circle',
-    title: 'Profesionales Certificados',
-    description: 'Equipo técnico altamente capacitado',
-  },
-  {
-    icon: 'fa-award',
-    title: 'Materiales Premium',
-    description: 'Resistentes a la intemperie y los rayos UV',
-  },
-  {
-    icon: 'fa-shield-alt',
-    title: 'Garantía Extendida',
-    description: 'Respaldo en todas nuestras instalaciones',
-  },
-  {
-    icon: 'fa-truck',
-    title: 'Instalación Rápida',
-    description: 'Sin molestias y en tiempo récord',
-  },
-]
-
-export const testimonials = [
-  {
-    quote:
-      'Excelente servicio y profesionalismo. Instalaron las mallas en mi edificio con rapidez y limpieza. La calidad del material es superior.',
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
-    name: 'Carlos Rodríguez',
-    role: 'Propietario en edificio',
-  },
-  {
-    quote:
-      'Contraté a Mallas Saru para proteger a mis niños en la terraza. Quedé impresionada con la atención personalizada y el resultado final.',
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
-    name: 'María González',
-    role: 'Madre de familia',
-  },
-  {
-    quote:
-      'Como administrador de condominio, necesitaba una solución segura y estética. Mallas Saru superó todas nuestras expectativas.',
-    image: 'https://randomuser.me/api/portraits/men/62.jpg',
-    name: 'Roberto Sánchez',
-    role: 'Administrador de condominio',
+    images: makeImages(
+      [cliente1, cliente2, cliente3, cliente4, cliente5],
+      'Espacio protegido',
+      'Entorno preparado para el bienestar cotidiano de la familia y sus mascotas.',
+    ),
   },
 ]
 
 export const whatsappQuoteUrl =
-  'https://wa.me/56972022406?text=Hola%2C%20quiero%20cotizar%20una%20malla%20de%20seguridad'
+  'https://wa.me/56972022406?text=Hola%2C%20quiero%20evaluar%20un%20espacio%20para%20instalar%20mallas%20de%20seguridad.'
 
-export const whatsappDiscountUrl =
-  'https://wa.me/56972022406?text=Hola%2C%20me%20interesa%20el%20descuento%20del%2010%25%20en%20mi%20primer%20servicio.%20%C2%BFPodr%C3%ADan%20proporcionarme%20m%C3%A1s%20informaci%C3%B3n%3F'
+export const whatsappConvenioUrl =
+  'https://wa.me/56972022406?text=Hola%2C%20quiero%20consultar%20por%20el%20beneficio%20de%20Tarjeta%20Vecino%20para%20instalar%20o%20recambiar%20mallas.'
+
+export const googleBusinessUrl =
+  'https://www.google.com/maps/place/Mallas+Saru/@-33.5200935,-70.5849707,17z/data=!4m15!1m8!3m7!1s0x9662d0579347472d:0x50de4253d46ac35!2sSta.+Adriana+1627,+8242115+La+Florida,+Regi%C3%B3n+Metropolitana!3b1!8m2!3d-33.5200935!4d-70.5849707!16s%2Fg%2F11hjk2_hnx!3m5!1s0x81e9fe3f18530c63:0xa88c42c8661cf282!8m2!3d-33.5200935!4d-70.5849707!16s%2Fg%2F11xcslw04f?entry=ttu'
+
+export const sanMiguelConvenioUrl =
+  'https://tarjetavecino.sanmiguel.cl/social/project/mallassaruspa/'
+
+export const officialSources = [
+  {
+    label: 'Ley N.º 21.442 de Copropiedad Inmobiliaria',
+    href: 'https://www.bcn.cl/leychile/navegar?idNorma=1174663',
+  },
+  {
+    label: 'MINVU: protección y cuidado en condominios',
+    href: 'https://www.minvu.gob.cl/wp-content/uploads/2025/06/ninez2.pdf',
+  },
+]

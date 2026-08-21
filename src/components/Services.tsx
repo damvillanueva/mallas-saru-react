@@ -1,25 +1,55 @@
+import { ArrowUpRight, Building2, PanelsTopLeft, PawPrint, Wrench } from 'lucide-react'
+import edificio from '../assets/img/trabajos/malla_Edificio/1.jpg'
+import residencial from '../assets/img/trabajos/malla_Residencial/2.jpg'
+import mascota from '../assets/img/trabajos/clientes_Satisfechos/1.jpg'
+import ventana from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260325-WA0051.jpg'
 import { services } from '../data/siteData'
+
+const serviceIcons = [Building2, PanelsTopLeft, PawPrint, Wrench]
+const serviceImages = [
+  { src: edificio, alt: 'Malla de seguridad instalada en un balcón en altura' },
+  { src: ventana, alt: 'Ventana de vivienda protegida con una malla de seguridad' },
+  { src: mascota, alt: 'Balcón familiar protegido con una malla de seguridad' },
+  { src: residencial, alt: 'Instalación de malla de seguridad en un espacio residencial' },
+]
 
 export function Services() {
   return (
-    <section className="section bg-light" id="servicios">
+    <section className="section services-section" id="servicios">
       <div className="container">
-        <header className="section-heading text-center">
-          <p className="section-kicker">Soluciones a tu medida</p>
-          <h2 className="section-title">Nuestros Servicios</h2>
-          <p className="text-muted">Seguridad para todo tipo de espacios</p>
-        </header>
-        <div className="row g-4">
-          {services.map((service) => (
-            <div className="col-lg-3 col-md-6" key={service.id} id={service.id}>
-              <article className="service-card p-4 text-center">
-                <div className="service-icon" aria-hidden="true">
-                  <i className={`fas ${service.icon}`} />
+        <div className="section-intro section-intro--split">
+          <div>
+            <p className="section-kicker">Soluciones según el riesgo</p>
+            <h2>Una instalación distinta <span>para cada espacio.</span></h2>
+          </div>
+          <p>
+            Antes de cotizar se debe entender quién necesita protección, cómo se usa el lugar y sobre qué material
+            se realizará la fijación.
+          </p>
+        </div>
+
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <article className="service-card" key={service.id} id={service.id}>
+              <div className="service-card__media">
+                <img src={serviceImages[index].src} alt={serviceImages[index].alt} loading="lazy" />
+                <div className="service-card__top">
+                  <span className="service-number">0{index + 1}</span>
+                  <span className="service-icon" aria-hidden="true">
+                    {(() => {
+                      const ServiceIcon = serviceIcons[index]
+                      return <ServiceIcon size={22} strokeWidth={1.8} />
+                    })()}
+                  </span>
                 </div>
-                <h3 className="h4">{service.title}</h3>
+              </div>
+              <div className="service-card__body">
+                <h3>{service.title}</h3>
                 <p>{service.description}</p>
-              </article>
-            </div>
+                <small>{service.detail}</small>
+                <a href="#trabajos">Ver trabajos <ArrowUpRight aria-hidden="true" size={16} /></a>
+              </div>
+            </article>
           ))}
         </div>
       </div>

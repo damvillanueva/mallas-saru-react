@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import { About } from './components/About'
+import { AccessibilityMenu } from './components/AccessibilityMenu'
+import { Convenios } from './components/Convenios'
 import { Footer } from './components/Footer'
+import { GoogleReviews } from './components/GoogleReviews'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Lightbox } from './components/Lightbox'
 import { Portfolio } from './components/Portfolio'
-import { PromoModal } from './components/PromoModal'
+import { QualityProtocol } from './components/QualityProtocol'
 import { QuoteForm } from './components/QuoteForm'
+import { SafetyFramework } from './components/SafetyFramework'
 import { Services } from './components/Services'
-import { Testimonials } from './components/Testimonials'
 import { WhatsAppButton } from './components/WhatsAppButton'
 import type { PortfolioGroup } from './data/siteData'
 
@@ -17,18 +20,22 @@ function App() {
 
   return (
     <>
+      <a className="skip-link" href="#contenido">Saltar al contenido principal</a>
+      <AccessibilityMenu />
       <WhatsAppButton />
       <Header />
-      <main>
+      <main id="contenido">
         <Hero />
         <Services />
+        <Convenios />
+        <QualityProtocol />
         <Portfolio onOpen={setOpenGallery} />
+        <GoogleReviews />
+        <SafetyFramework />
         <About />
         <QuoteForm />
-        <Testimonials />
       </main>
       <Footer />
-      <PromoModal />
       {openGallery && <Lightbox group={openGallery} onClose={() => setOpenGallery(null)} />}
     </>
   )

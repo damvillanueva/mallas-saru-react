@@ -8,17 +8,26 @@ Migración del sitio estático [Percy-182/mallas_Saru](https://github.com/Percy-
 - TypeScript para contratos de datos y detección temprana de errores.
 - Vite para desarrollo local y compilación optimizada.
 - Bootstrap 5 para la grilla y utilidades visuales del diseño original.
+- Lucide React para iconos incluidos en la compilación, sin depender de una CDN en producción.
 - Oxlint para validación estática del código.
-- GitHub Actions para validar cada cambio con `lint` y `build`.
+- GitHub Actions para validar dependencias, código y compilación en cada cambio.
 
 ## Funcionalidades migradas
 
 - Navegación responsiva y desplazamiento suave.
-- Modal automático con promoción y acceso a WhatsApp.
 - Galerías de proyectos con lightbox, flechas y control por teclado.
-- Formulario de cotización conectado al endpoint Formspree existente.
-- Secciones de servicios, experiencia, testimonios y contacto.
+- Formulario de cotización que prepara el mensaje localmente y permite al visitante confirmar el envío en WhatsApp.
+- Secciones de servicios, protocolo de instalación, marco de seguridad, experiencia y contacto.
 - Metadatos SEO y Open Graph.
+
+## Seguridad y privacidad del código
+
+- El sitio no incorpora analítica, cookies, cuentas, base de datos ni almacenamiento de formularios.
+- El navegador no recibe secretos ni credenciales.
+- Los recursos visuales se compilan localmente; no se cargan fuentes o iconos desde una CDN.
+- `package-lock.json`, auditoría de dependencias, análisis estático y compilación forman parte de la verificación.
+- Dependabot queda preparado para proponer actualizaciones cuando el repositorio se publique.
+- Las decisiones, límites y controles pendientes del hosting están descritos en `SECURITY.md`.
 
 ## Uso local
 

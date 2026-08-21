@@ -1,3 +1,4 @@
+import { MessageCircle } from 'lucide-react'
 import { whatsappQuoteUrl } from '../data/siteData'
 
 export function WhatsAppButton() {
@@ -6,11 +7,11 @@ export function WhatsAppButton() {
       href={whatsappQuoteUrl}
       className="whatsapp-btn"
       target="_blank"
-      rel="noreferrer"
+      rel="noopener noreferrer"
       aria-label="Cotizar por WhatsApp"
     >
-      <span className="whatsapp-text">Cotiza aquí</span>
-      <i className="fab fa-whatsapp" aria-hidden="true" />
+      <MessageCircle aria-hidden="true" size={20} />
+      <span className="whatsapp-text">Cotizar</span>
     </a>
   )
 }

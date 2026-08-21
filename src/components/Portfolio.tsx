@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react'
 import { portfolioGroups, type PortfolioGroup } from '../data/siteData'
 
 type PortfolioProps = {
@@ -8,10 +9,12 @@ export function Portfolio({ onOpen }: PortfolioProps) {
   return (
     <section className="section" id="trabajos">
       <div className="container">
-        <header className="section-heading text-center">
-          <p className="section-kicker">Experiencia comprobable</p>
-          <h2 className="section-title">Trabajos Realizados</h2>
-          <p className="text-muted">Selecciona un proyecto para recorrer su galería</p>
+        <header className="section-intro section-intro--split">
+          <div>
+            <p className="section-kicker">Portafolio real</p>
+            <h2>Instalaciones realizadas por Mallas Saru.</h2>
+          </div>
+          <p>Revisa balcones, ventanas y espacios residenciales. Selecciona una categoría para abrir la galería.</p>
         </header>
         <div className="portfolio-grid">
           {portfolioGroups.map((group) => (
@@ -24,11 +27,12 @@ export function Portfolio({ onOpen }: PortfolioProps) {
             >
               <img src={group.cover} alt={group.alt} loading="lazy" className="portfolio-img" />
               <span className="portfolio-overlay">
-                <span className="portfolio-action" aria-hidden="true">
-                  <i className="fas fa-expand-alt" /> Ver galería
+                <span className="portfolio-copy">
+                  <span className="portfolio-action" aria-hidden="true">Proyecto real</span>
+                  <strong>{group.title}</strong>
+                  <small>{group.description}</small>
                 </span>
-                <span className="h4">{group.title}</span>
-                <span>{group.description}</span>
+                <span className="portfolio-open" aria-hidden="true"><ExternalLink size={18} /></span>
               </span>
             </button>
           ))}
