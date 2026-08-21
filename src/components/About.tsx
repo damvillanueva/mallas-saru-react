@@ -1,12 +1,28 @@
-import { ArrowRight, Check } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Clock3, ShieldCheck, Sun, Venus } from 'lucide-react'
 import companyImage from '../assets/img/mallas_Saru.jpg'
 import logo from '../assets/img/logotipo_MallasSaru_Chile.jpg'
 
-const commitments = [
-  'Cotización con alcance definido',
-  'Imágenes de trabajos reales',
-  'Comunicación directa por WhatsApp',
-  'Orientación de cuidado y postventa',
+const strengths = [
+  {
+    icon: BadgeCheck,
+    title: 'Profesionales certificados',
+    text: 'Equipo técnico capacitado para ejecutar instalaciones cuidadas y consistentes.',
+  },
+  {
+    icon: Sun,
+    title: 'Materiales premium',
+    text: 'Materiales con respaldo técnico, preparados para exposición a intemperie y rayos UV.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Garantía en instalaciones',
+    text: 'Informamos el alcance de la garantía y las recomendaciones de cuidado de cada trabajo.',
+  },
+  {
+    icon: Clock3,
+    title: 'Instalación coordinada',
+    text: 'Planificamos cada visita para trabajar con orden y reducir las molestias en el espacio.',
+  },
 ]
 
 export function About() {
@@ -15,29 +31,48 @@ export function About() {
       <div className="container">
         <div className="about-layout">
           <div className="about-media">
-            <img src={companyImage} alt="Instalación residencial realizada por Mallas Saru" loading="lazy" />
+            <img src={companyImage} alt="Malla de seguridad instalada por Mallas Saru en un balcón residencial" loading="lazy" />
+            <div className="about-years" aria-label="Más de diez años de experiencia">
+              <strong>+10</strong><span>años protegiendo espacios</span>
+            </div>
             <div className="about-logo-card">
               <img src={logo} alt="Mallas Saru" />
-              <p><strong>Empresa chilena</strong><span>Gestionada y dirigida por una mujer</span></p>
+              <p><strong>Empresa chilena</strong><span>Tu seguridad, en nuestras manos.</span></p>
             </div>
           </div>
 
           <div className="about-copy">
-            <p className="section-kicker">La cercanía de siempre, con un estándar más claro</p>
-            <h2>Protegemos hogares sin perder el trato humano.</h2>
+            <p className="section-kicker">Sobre Mallas Saru</p>
+            <h2>Más de 10 años cuidando lo que más importa.</h2>
             <p className="about-lead">
-              Mallas Saru nació como un servicio cercano para familias, mascotas y comunidades. Esta nueva etapa
-              mantiene esa identidad y suma más orden en la evaluación, la instalación y la postventa.
+              Nos especializamos en soluciones de seguridad en altura para proteger familias, mascotas,
+              comunidades, equipos de trabajo y patrimonio.
             </p>
-            <p>
-              Cada proyecto cambia según el espacio. Por eso evitamos promesas genéricas y recomendamos revisar
-              soporte, exposición, uso, material, fijaciones y mantenimiento antes de tomar una decisión.
-            </p>
-            <ul className="commitment-list">
-              {commitments.map((commitment) => (
-                <li key={commitment}><Check aria-hidden="true" size={16} />{commitment}</li>
+            <div className="women-led-note">
+              <span aria-hidden="true"><Venus size={20} /></span>
+              <p><strong>Empresa gestionada y dirigida por una mujer</strong><small>Liderazgo femenino, cercanía y excelencia en cada proyecto.</small></p>
+            </div>
+
+            <div className="about-strengths">
+              {strengths.map(({ icon: StrengthIcon, title, text }) => (
+                <article className="about-strength" key={title}>
+                  <span aria-hidden="true"><StrengthIcon size={20} /></span>
+                  <div><h3>{title}</h3><p>{text}</p></div>
+                </article>
               ))}
-            </ul>
+            </div>
+
+            <div className="about-commitment">
+              <div>
+                <p>Nuestro compromiso</p>
+                <h3>Una solución responsable para cada proyecto.</h3>
+              </div>
+              <p>
+                Escuchamos tus necesidades y proponemos una alternativa acorde con el espacio y el presupuesto,
+                trabajando con responsabilidad, puntualidad y transparencia.
+              </p>
+            </div>
+
             <a className="text-link" href="#contacto">Conversemos sobre tu espacio <ArrowRight aria-hidden="true" size={17} /></a>
           </div>
         </div>

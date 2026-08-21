@@ -8,7 +8,7 @@ export function Hero() {
       <div className="container hero-layout">
         <div className="hero-content">
           <p className="hero-eyebrow">
-            <span /> Instalación e inspección en Santiago
+            <span /> RM · VI Región · litoral central de la V Región
           </p>
           <h1>Protección en altura, instalada con criterio.</h1>
           <p className="hero-lead">
@@ -25,8 +25,8 @@ export function Hero() {
             </a>
           </div>
           <ul className="hero-facts" aria-label="Características del servicio">
-            <li><strong>+10 años</strong><span>de experiencia declarada</span></li>
-            <li><strong>RM</strong><span>atención en Santiago</span></li>
+            <li><strong>+10 años</strong><span>de experiencia en terreno</span></li>
+            <li><strong>3 zonas</strong><span>cobertura regional</span></li>
             <li><strong>Postventa</strong><span>orientación y seguimiento</span></li>
           </ul>
         </div>
@@ -34,10 +34,10 @@ export function Hero() {
         <aside className="hero-assurance" aria-label="Compromiso de información responsable">
           <span className="assurance-icon" aria-hidden="true"><ShieldCheck size={23} /></span>
           <p className="assurance-kicker">Compromiso Saru</p>
-          <h2>Seguridad que se puede explicar.</h2>
+          <h2>Materiales certificados y trabajo bien informado.</h2>
           <p>
-            No prometemos resistencias ni certificaciones sin respaldo. Cada propuesta debe identificar material,
-            soporte, fijaciones, alcance de garantía y mantenimiento recomendado.
+            Trabajamos con materiales certificados y respaldo técnico. Cada propuesta identifica la solución,
+            el soporte, las fijaciones, la garantía y el mantenimiento recomendado para el espacio.
           </p>
           <a href="#seguridad">Ver marco de seguridad <ArrowRight aria-hidden="true" size={17} /></a>
         </aside>

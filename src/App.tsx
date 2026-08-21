@@ -27,11 +27,11 @@ function App() {
       <main id="contenido">
         <Hero />
         <Services />
-        <Convenios />
         <QualityProtocol />
+        <SafetyFramework />
         <Portfolio onOpen={setOpenGallery} />
         <GoogleReviews />
-        <SafetyFramework />
+        <Convenios />
         <About />
         <QuoteForm />
       </main>

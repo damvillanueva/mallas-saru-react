@@ -1,24 +1,26 @@
-import { ArrowUpRight, Building2, ClipboardCheck, Info, Landmark, ShieldCheck } from 'lucide-react'
+import { ArrowUpRight, Building2, ClipboardCheck, Landmark, ShieldCheck } from 'lucide-react'
+import familyImage from '../assets/img/trabajos/clientes_Satisfechos/1.jpg'
+import petImage from '../assets/img/trabajos/clientes_Satisfechos/2.jpg'
 import { officialSources } from '../data/siteData'
 
 const leyValentinUrl =
-  'https://www.senado.cl/comunicaciones/noticias/comision-mixta-debera-buscar-acuerdo-sobre-medidas-para-prevenir-caidas'
+  'https://www.camara.cl/legislacion/sala_sesiones/votacion_detalle.aspx?prmIdVotacion=89745'
 
 const principles = [
   {
     number: '01',
-    title: 'Protección recomendada en Chile',
-    text: 'MINVU recomienda incorporar mallas en balcones y ventanas cuando viven niños o personas que requieren mayor cuidado, manteniendo siempre la supervisión responsable.',
+    title: 'Pensada para cada familia',
+    text: 'Consideramos quién usa el espacio —niños, mascotas o personas que necesitan mayor cuidado— para orientar una solución adecuada.',
   },
   {
     number: '02',
-    title: 'Reglas del edificio primero',
-    text: 'En departamentos conviene revisar el reglamento y consultar a la administración antes de intervenir balcones, fachadas o puntos visibles desde el exterior.',
+    title: 'Coordinada con tu edificio',
+    text: 'Antes de intervenir balcones o fachadas, revisamos contigo las condiciones del lugar y los requisitos de la administración.',
   },
   {
     number: '03',
-    title: 'Evaluación del espacio real',
-    text: 'El soporte, el contorno, la apertura de ventanas y el uso cotidiano determinan la fijación y el alcance del trabajo. Eso debe quedar claro antes de instalar.',
+    title: 'Evaluada en el espacio real',
+    text: 'El soporte, el contorno y el uso cotidiano definen las fijaciones, las terminaciones y el alcance que quedará indicado en la cotización.',
   },
 ]
 
@@ -30,35 +32,45 @@ export function SafetyFramework() {
       <div className="container">
         <div className="safety-layout">
           <div className="safety-intro">
-            <p className="section-kicker">Seguridad en Chile</p>
-            <h2>Proteger primero. Instalar con criterio.</h2>
-            <p>
-              Para una familia importa entender qué se protegerá, cómo se usa el espacio y qué condiciones tiene
-              el edificio. Traducimos esas preguntas en una recomendación clara y una cotización comprensible.
-            </p>
-            <div className="safety-status">
-              <span className="status-mark" aria-hidden="true"><Info size={18} /></span>
-              <div>
-                <strong>Antes de cotizar</strong>
-                <span>Cuéntanos si es casa o departamento, quién necesita protección y si la administración tiene reglas para balcones o fachadas.</span>
-              </div>
+            <div className="safety-photo safety-photo--family">
+              <img src={familyImage} alt="Balcón familiar protegido con malla de seguridad" loading="lazy" />
+              <span>Protección para niños</span>
+            </div>
+            <div className="safety-photo safety-photo--pet">
+              <img src={petImage} alt="Gato en una ventana protegida con malla de seguridad" loading="lazy" />
+              <span>Espacios para mascotas</span>
+            </div>
+            <div className="safety-photo-note">
+              <strong>Trabajos reales de Mallas Saru</strong>
+              <span>Soluciones integradas al uso cotidiano del hogar.</span>
             </div>
           </div>
 
-          <div className="principles-grid">
-            {principles.map((principle, index) => {
-              const PrincipleIcon = principleIcons[index]
-              return (
-              <article className="principle-card" key={principle.title}>
-                <div className="principle-card__meta">
-                  <span className="principle-icon" aria-hidden="true"><PrincipleIcon size={21} strokeWidth={1.8} /></span>
-                  <small>{principle.number}</small>
-                </div>
-                <h3>{principle.title}</h3>
-                <p>{principle.text}</p>
-              </article>
-              )
-            })}
+          <div className="safety-content">
+            <p className="section-kicker">Seguridad para la vida en casa</p>
+            <h2>Una protección cercana, pensada para quienes más quieres.</h2>
+            <p className="safety-content__lead">
+              Cada hogar y cada comunidad tienen necesidades distintas. Por eso unimos evaluación técnica,
+              materiales certificados y una conversación clara antes de instalar.
+            </p>
+            <div className="principles-grid">
+              {principles.map((principle, index) => {
+                const PrincipleIcon = principleIcons[index]
+                return (
+                <article className="principle-card" key={principle.title}>
+                  <div className="principle-card__meta">
+                    <span className="principle-icon" aria-hidden="true"><PrincipleIcon size={21} strokeWidth={1.8} /></span>
+                    <small>{principle.number}</small>
+                  </div>
+                  <div>
+                    <h3>{principle.title}</h3>
+                    <p>{principle.text}</p>
+                  </div>
+                </article>
+                )
+              })}
+            </div>
+            <a className="text-link safety-quote-link" href="#contacto">Cuéntanos qué necesitas proteger <ArrowUpRight aria-hidden="true" size={17} /></a>
           </div>
         </div>
 
@@ -68,7 +80,7 @@ export function SafetyFramework() {
             <div>
               <p className="law-project-card__kicker">Proyecto en tramitación</p>
               <h3>Proyecto “Ley Valentín”</h3>
-              <p>Busca reforzar la prevención de caídas desde edificios. Su estado oficial consultado en julio de 2026 es Comisión Mixta; todavía no corresponde presentarlo como ley vigente.</p>
+              <p>Busca reforzar la prevención de caídas desde edificios. Su tramitación continúa en Comisión Mixta; el 12 de agosto de 2026 la Cámara aprobó su integración. Todavía no corresponde presentarlo como ley vigente.</p>
             </div>
             <a href={leyValentinUrl} target="_blank" rel="noopener noreferrer">
               Revisar avance oficial <ArrowUpRight aria-hidden="true" size={17} />

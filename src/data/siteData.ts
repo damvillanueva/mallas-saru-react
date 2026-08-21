@@ -37,10 +37,10 @@ export type PortfolioGroup = {
 
 export const navLinks = [
   { href: '#servicios', label: 'Soluciones' },
-  { href: '#convenios', label: 'Convenios' },
   { href: '#protocolo', label: 'Cómo trabajamos' },
-  { href: '#trabajos', label: 'Trabajos' },
   { href: '#seguridad', label: 'Seguridad' },
+  { href: '#trabajos', label: 'Trabajos' },
+  { href: '#convenios', label: 'Convenios' },
   { href: '#nosotros', label: 'Nosotros' },
 ]
 

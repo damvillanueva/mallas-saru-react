@@ -26,11 +26,11 @@ export function Footer() {
               <img src={logo} alt="Logotipo de Mallas Saru" />
               <div><strong>Mallas Saru</strong><span>Tu seguridad, en nuestras manos.</span></div>
             </div>
-            <p>Instalación, inspección y recambio de mallas para balcones, ventanas y espacios de riesgo en Santiago.</p>
+            <p>Instalación, inspección y recambio de mallas para balcones, ventanas y espacios de riesgo en la zona central.</p>
             <div className="social-links" aria-label="Redes sociales">
               <a className="social-link social-link--facebook" href="https://www.facebook.com/Mallassaru" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebookF aria-hidden="true" /></a>
               <a className="social-link social-link--instagram" href="https://www.instagram.com/mallas.saru/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram aria-hidden="true" /></a>
-              <span className="social-link social-link--linkedin social-link--disabled" aria-label="LinkedIn, próximamente" title="LinkedIn · pendiente de conectar"><FaLinkedinIn aria-hidden="true" /></span>
+              <span className="social-link social-link--linkedin social-link--disabled" aria-label="LinkedIn"><FaLinkedinIn aria-hidden="true" /></span>
             </div>
             <div className="footer-payment">
               <span><CreditCard aria-hidden="true" size={16} /> Medios de pago</span>
@@ -78,7 +78,7 @@ export function Footer() {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} Mallas Saru SpA. Todos los derechos reservados.</p>
-          <p>Atención en Santiago y comunas de la Región Metropolitana.</p>
+          <p>Cobertura: RM, VI Región y litoral central de la V Región.</p>
         </div>
       </div>
     </footer>

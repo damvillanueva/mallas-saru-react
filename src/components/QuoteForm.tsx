@@ -17,15 +17,19 @@ export function QuoteForm() {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     const name = String(data.get('name') ?? '').trim()
+    const phone = String(data.get('phone') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
     const commune = String(data.get('commune') ?? '').trim()
     const service = String(data.get('service') ?? '')
     const detail = String(data.get('message') ?? '').trim()
     const message = [
       `Hola, soy ${name}. Quiero solicitar una evaluación de Mallas Saru.`,
+      `Teléfono de contacto: ${phone}`,
+      email ? `Correo: ${email}` : null,
       `Comuna: ${commune}`,
       `Espacio: ${serviceLabels[service] ?? 'Por definir'}`,
       `Detalle: ${detail}`,
-    ].join('\n')
+    ].filter(Boolean).join('\n')
 
     window.location.assign(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`)
   }
@@ -61,6 +65,14 @@ export function QuoteForm() {
                 <div className="field-group">
                   <label htmlFor="quote-name">Nombre</label>
                   <input id="quote-name" type="text" name="name" placeholder="Tu nombre" autoComplete="name" minLength={2} maxLength={80} required />
+                </div>
+                <div className="field-group">
+                  <label htmlFor="quote-phone">Teléfono de contacto</label>
+                  <input id="quote-phone" type="tel" name="phone" placeholder="+56 9 1234 5678" autoComplete="tel" inputMode="tel" pattern="[0-9+()\s-]{8,24}" title="Ingresa un teléfono válido, usando números, espacios, paréntesis, guion o signo +." minLength={8} maxLength={24} required />
+                </div>
+                <div className="field-group">
+                  <label htmlFor="quote-email">Correo <span className="field-optional">(opcional)</span></label>
+                  <input id="quote-email" type="email" name="email" placeholder="nombre@correo.cl" autoComplete="email" maxLength={120} />
                 </div>
                 <div className="field-group">
                   <label htmlFor="quote-commune">Comuna</label>

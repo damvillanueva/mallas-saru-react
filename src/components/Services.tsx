@@ -1,7 +1,7 @@
 import { ArrowUpRight, Building2, PanelsTopLeft, PawPrint, Wrench } from 'lucide-react'
 import edificio from '../assets/img/trabajos/malla_Edificio/1.jpg'
 import residencial from '../assets/img/trabajos/malla_Residencial/2.jpg'
-import mascota from '../assets/img/trabajos/clientes_Satisfechos/1.jpg'
+import mascota from '../assets/img/trabajos/clientes_Satisfechos/2.jpg'
 import ventana from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260325-WA0051.jpg'
 import { services } from '../data/siteData'
 
@@ -9,7 +9,7 @@ const serviceIcons = [Building2, PanelsTopLeft, PawPrint, Wrench]
 const serviceImages = [
   { src: edificio, alt: 'Malla de seguridad instalada en un balcón en altura' },
   { src: ventana, alt: 'Ventana de vivienda protegida con una malla de seguridad' },
-  { src: mascota, alt: 'Balcón familiar protegido con una malla de seguridad' },
+  { src: mascota, alt: 'Mascota en un espacio protegido con una malla de seguridad' },
   { src: residencial, alt: 'Instalación de malla de seguridad en un espacio residencial' },
 ]
 
