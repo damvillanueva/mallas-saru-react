@@ -17,8 +17,11 @@ Migración del sitio estático [Percy-182/mallas_Saru](https://github.com/Percy-
 - Navegación responsiva y desplazamiento suave.
 - Galerías de proyectos con lightbox, flechas y control por teclado.
 - Formulario de cotización que prepara el mensaje localmente y permite al visitante confirmar el envío en WhatsApp.
+- Promoción de bienvenida con vigencia, condiciones y frecuencia de aparición controladas.
+- Política de garantía accesible, con cobertura, exclusiones y canal de revisión.
 - Secciones de servicios, protocolo de instalación, marco de seguridad, experiencia y contacto.
-- Metadatos SEO y Open Graph.
+- Fotografías optimizadas en WebP, favicon e imagen Open Graph para compartir el sitio.
+- Metadatos SEO y Open Graph preparados para el dominio definitivo.
 
 ## Seguridad y privacidad del código
 
@@ -56,6 +59,9 @@ src/
 ├── App.tsx       # Composición de la página
 ├── main.tsx      # Punto de entrada
 └── styles.css    # Estilos del sitio
+scripts/
+└── optimize_images.py # Regenera WebP, favicon e imagen social desde recursos reales
+public/           # Iconos e imagen social listos para la compilación
 ```
 
 ## Diferencia respecto del proyecto original

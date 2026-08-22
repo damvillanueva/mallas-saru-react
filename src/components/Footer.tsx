@@ -1,4 +1,4 @@
-import { ArrowUpRight, BadgePercent, CreditCard, Mail, MapPin, MessageCircle, Phone, Star } from 'lucide-react'
+import { ArrowUpRight, BadgePercent, CreditCard, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Star } from 'lucide-react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import webpayLogo from '../assets/img/1.Webpay_FN_300px.svg'
 import logo from '../assets/img/logotipo_MallasSaru_Chile.jpg'
@@ -6,7 +6,11 @@ import { googleBusinessUrl, navLinks, services, whatsappConvenioUrl, whatsappQuo
 
 const mapUrl = googleBusinessUrl
 
-export function Footer() {
+type FooterProps = {
+  onOpenGuarantee: () => void
+}
+
+export function Footer({ onOpenGuarantee }: FooterProps) {
   return (
     <footer className="site-footer" id="pie-de-pagina">
       <div className="container">
@@ -72,6 +76,11 @@ export function Footer() {
                 <span><strong>Tarjeta Vecino</strong><small>Consultar beneficio</small></span>
                 <ArrowUpRight aria-hidden="true" size={15} />
               </a>
+              <button type="button" onClick={onOpenGuarantee}>
+                <ShieldCheck aria-hidden="true" size={18} />
+                <span><strong>Garantía de instalación</strong><small>Revisar cobertura</small></span>
+                <ArrowUpRight aria-hidden="true" size={15} />
+              </button>
             </div>
           </div>
         </div>

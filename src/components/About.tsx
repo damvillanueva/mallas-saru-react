@@ -1,5 +1,5 @@
 import { ArrowRight, BadgeCheck, Clock3, ShieldCheck, Sun, Venus } from 'lucide-react'
-import companyImage from '../assets/img/mallas_Saru.jpg'
+import companyImage from '../assets/img/mallas_Saru.webp'
 import logo from '../assets/img/logotipo_MallasSaru_Chile.jpg'
 
 const strengths = [
