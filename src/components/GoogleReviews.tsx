@@ -1,5 +1,5 @@
-import { ArrowUpRight, Star } from 'lucide-react'
-import { googleBusinessUrl } from '../data/siteData'
+import { ArrowUpRight, MessageSquarePlus, MessagesSquare, Star } from 'lucide-react'
+import { googleBusinessUrl, googleReviewUrl, habitissimoProfileUrl } from '../data/siteData'
 
 export function GoogleReviews() {
   return (
@@ -26,12 +26,26 @@ export function GoogleReviews() {
             <h3>Lee las reseñas directamente en Google.</h3>
             <p>Revisa los comentarios, las fechas de publicación y la valoración general en la ficha oficial de Mallas Saru.</p>
           </div>
-          <a className="button button--primary" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
-            Ver reseñas en Google <ArrowUpRight aria-hidden="true" size={17} />
-          </a>
+          <div className="reviews-direct__actions">
+            <a className="button button--primary" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
+              Ver reseñas <ArrowUpRight aria-hidden="true" size={17} />
+            </a>
+            <a className="reviews-review-link" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+              <MessageSquarePlus aria-hidden="true" size={17} /> Déjanos una reseña
+            </a>
+          </div>
         </div>
 
-        <p className="reviews-disclosure">El enlace abre la fuente original para que puedas consultar todas las opiniones publicadas.</p>
+        <a className="habitissimo-reviews" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true"><MessagesSquare size={20} /></span>
+          <div>
+            <small>Otra fuente pública</small>
+            <strong>Consulta también las opiniones de Mallas Saru en Habitissimo.</strong>
+          </div>
+          <span>Ver opiniones <ArrowUpRight aria-hidden="true" size={16} /></span>
+        </a>
+
+        <p className="reviews-disclosure">Los enlaces abren las fuentes originales. No entregamos beneficios a cambio de publicar una opinión.</p>
       </div>
     </section>
   )

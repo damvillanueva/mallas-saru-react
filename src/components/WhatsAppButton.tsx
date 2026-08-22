@@ -1,10 +1,10 @@
 import { MessageCircle } from 'lucide-react'
-import { whatsappQuoteUrl } from '../data/siteData'
+import { whatsappFloatingUrl } from '../data/siteData'
 
 export function WhatsAppButton() {
   return (
     <a
-      href={whatsappQuoteUrl}
+      href={whatsappFloatingUrl}
       className="whatsapp-btn"
       target="_blank"
       rel="noopener noreferrer"

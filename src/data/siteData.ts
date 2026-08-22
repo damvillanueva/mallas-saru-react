@@ -37,9 +37,9 @@ export type PortfolioGroup = {
 
 export const navLinks = [
   { href: '#servicios', label: 'Soluciones' },
+  { href: '#trabajos', label: 'Trabajos' },
   { href: '#protocolo', label: 'Cómo trabajamos' },
   { href: '#seguridad', label: 'Seguridad' },
-  { href: '#trabajos', label: 'Trabajos' },
   { href: '#convenios', label: 'Convenios' },
   { href: '#nosotros', label: 'Nosotros' },
 ]
@@ -129,14 +129,66 @@ export const portfolioGroups: PortfolioGroup[] = [
   },
 ]
 
-export const whatsappQuoteUrl =
-  'https://wa.me/56972022406?text=Hola%2C%20quiero%20evaluar%20un%20espacio%20para%20instalar%20mallas%20de%20seguridad.'
+export const whatsappNumber = '56972022406'
 
-export const whatsappConvenioUrl =
-  'https://wa.me/56972022406?text=Hola%2C%20quiero%20consultar%20por%20el%20beneficio%20de%20Tarjeta%20Vecino%20para%20instalar%20o%20recambiar%20mallas.'
+export const createWhatsAppUrl = (origin: string, request: string) =>
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hola, ${request}\n\nOrigen: ${origin}`)}`
 
-export const googleBusinessUrl =
-  'https://www.google.com/maps/place/Mallas+Saru/@-33.5200935,-70.5849707,17z/data=!4m15!1m8!3m7!1s0x9662d0579347472d:0x50de4253d46ac35!2sSta.+Adriana+1627,+8242115+La+Florida,+Regi%C3%B3n+Metropolitana!3b1!8m2!3d-33.5200935!4d-70.5849707!16s%2Fg%2F11hjk2_hnx!3m5!1s0x81e9fe3f18530c63:0xa88c42c8661cf282!8m2!3d-33.5200935!4d-70.5849707!16s%2Fg%2F11xcslw04f?entry=ttu'
+export const whatsappQuoteUrl = createWhatsAppUrl(
+  'Sitio web',
+  'quiero evaluar un espacio para instalar mallas de seguridad.',
+)
+
+export const whatsappHeaderUrl = createWhatsAppUrl(
+  'Encabezado del sitio',
+  'quiero cotizar una instalación de mallas de seguridad.',
+)
+
+export const whatsappHeroUrl = createWhatsAppUrl(
+  'Inicio',
+  'vi la presentación de Mallas Saru y quiero cotizar un espacio.',
+)
+
+export const whatsappFloatingUrl = createWhatsAppUrl(
+  'Botón flotante',
+  'quiero cotizar una instalación de mallas de seguridad.',
+)
+
+export const whatsappFooterUrl = createWhatsAppUrl(
+  'Pie de página',
+  'quiero solicitar una evaluación para mi espacio.',
+)
+
+export const whatsappPhotosUrl = createWhatsAppUrl(
+  'Formulario web · envío de fotografías',
+  'quiero enviar fotografías y medidas aproximadas para solicitar una cotización.',
+)
+
+export const whatsappFaqUrl = createWhatsAppUrl(
+  'Preguntas frecuentes',
+  'revisé las preguntas frecuentes y necesito orientación sobre mi espacio.',
+)
+
+export const whatsappGuaranteeUrl = createWhatsAppUrl(
+  'Política de garantía',
+  'quiero solicitar orientación o una revisión relacionada con la garantía de instalación.',
+)
+
+export const whatsappPromotionUrl = createWhatsAppUrl(
+  'Promoción 10% para nuevos clientes',
+  'soy nuevo/a cliente y quiero cotizar mi primera instalación con el 10% de bienvenida.',
+)
+
+export const whatsappConvenioUrl = createWhatsAppUrl(
+  'Convenios',
+  'quiero consultar por el beneficio de Tarjeta Vecino para instalar o recambiar mallas.',
+)
+
+export const googleBusinessUrl = 'https://share.google/WlhdQ9PblRoudbSTp'
+
+export const googleReviewUrl = 'https://g.page/r/CYLyHGbIQoyoEAI/review'
+
+export const habitissimoProfileUrl = 'https://empresas.habitissimo.cl/pro/construcciones-saru'
 
 export const sanMiguelConvenioUrl =
   'https://tarjetavecino.sanmiguel.cl/social/project/mallassaruspa/'

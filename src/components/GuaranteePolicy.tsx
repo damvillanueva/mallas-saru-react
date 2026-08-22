@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Check, Mail, MessageCircle, ShieldCheck, X } from 'lucide-react'
-import { whatsappQuoteUrl } from '../data/siteData'
+import { whatsappGuaranteeUrl } from '../data/siteData'
 
 type GuaranteePolicyProps = {
   isOpen: boolean
@@ -108,7 +108,7 @@ export function GuaranteePolicy({ isOpen, onClose }: GuaranteePolicyProps) {
             <p>Envíanos el comprobante o datos del trabajo, dirección, descripción del problema y fotografías. Revisaremos los antecedentes y coordinaremos la inspección correspondiente.</p>
           </div>
           <div className="guarantee-claim__actions">
-            <a href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" size={17} />WhatsApp</a>
+            <a href={whatsappGuaranteeUrl} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" size={17} />WhatsApp</a>
             <a href="mailto:mallas.saru.spa@gmail.com"><Mail aria-hidden="true" size={17} />Correo</a>
           </div>
         </section>

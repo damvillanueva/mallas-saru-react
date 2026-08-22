@@ -1,16 +1,17 @@
-import { ArrowUpRight, BadgePercent, CreditCard, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Star } from 'lucide-react'
+import { ArrowUpRight, BadgePercent, CircleHelp, CreditCard, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Star } from 'lucide-react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 import webpayLogo from '../assets/img/1.Webpay_FN_300px.svg'
 import logo from '../assets/img/logotipo_MallasSaru_Chile.jpg'
-import { googleBusinessUrl, navLinks, services, whatsappConvenioUrl, whatsappQuoteUrl } from '../data/siteData'
+import { googleBusinessUrl, navLinks, services, whatsappConvenioUrl, whatsappFooterUrl } from '../data/siteData'
 
 const mapUrl = googleBusinessUrl
 
 type FooterProps = {
+  onOpenFaq: () => void
   onOpenGuarantee: () => void
 }
 
-export function Footer({ onOpenGuarantee }: FooterProps) {
+export function Footer({ onOpenFaq, onOpenGuarantee }: FooterProps) {
   return (
     <footer className="site-footer" id="pie-de-pagina">
       <div className="container">
@@ -19,7 +20,7 @@ export function Footer({ onOpenGuarantee }: FooterProps) {
             <p>Conversemos sobre tu espacio</p>
             <h2>Una protección bien pensada comienza con una buena evaluación.</h2>
           </div>
-          <a className="button button--primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">
+          <a className="button button--primary" href={whatsappFooterUrl} target="_blank" rel="noopener noreferrer">
             <MessageCircle aria-hidden="true" size={18} /> Cotizar por WhatsApp
           </a>
         </div>
@@ -79,6 +80,11 @@ export function Footer({ onOpenGuarantee }: FooterProps) {
               <button type="button" onClick={onOpenGuarantee}>
                 <ShieldCheck aria-hidden="true" size={18} />
                 <span><strong>Garantía de instalación</strong><small>Revisar cobertura</small></span>
+                <ArrowUpRight aria-hidden="true" size={15} />
+              </button>
+              <button type="button" onClick={onOpenFaq}>
+                <CircleHelp aria-hidden="true" size={18} />
+                <span><strong>Preguntas frecuentes</strong><small>Resolver dudas habituales</small></span>
                 <ArrowUpRight aria-hidden="true" size={15} />
               </button>
             </div>

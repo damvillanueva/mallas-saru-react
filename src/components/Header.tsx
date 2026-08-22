@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { MessageCircle } from 'lucide-react'
 import logo from '../assets/img/logotipo_MallasSaru_Chile.jpg'
-import { navLinks, whatsappQuoteUrl } from '../data/siteData'
+import { navLinks, whatsappHeaderUrl } from '../data/siteData'
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -47,7 +47,7 @@ export function Header() {
                 </li>
               ))}
             </ul>
-            <a className="header-cta" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">
+            <a className="header-cta" href={whatsappHeaderUrl} target="_blank" rel="noopener noreferrer">
               <MessageCircle aria-hidden="true" size={17} />
               Cotizar
             </a>

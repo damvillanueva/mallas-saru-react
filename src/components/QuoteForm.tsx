@@ -1,8 +1,6 @@
 import type { FormEvent } from 'react'
 import { ArrowRight, ClipboardCheck, MessageCircle } from 'lucide-react'
-import { whatsappQuoteUrl } from '../data/siteData'
-
-const whatsappNumber = '56972022406'
+import { whatsappNumber, whatsappPhotosUrl } from '../data/siteData'
 
 const serviceLabels: Record<string, string> = {
   balcon: 'Balcón o terraza',
@@ -10,6 +8,12 @@ const serviceLabels: Record<string, string> = {
   mascotas: 'Espacio para mascotas',
   mantencion: 'Inspección o recambio',
   otro: 'Otro espacio',
+}
+
+const workTypeLabels: Record<string, string> = {
+  nueva: 'Instalación nueva',
+  inspeccion: 'Inspección o mantenimiento',
+  recambio: 'Recambio de malla existente',
 }
 
 export function QuoteForm() {
@@ -21,13 +25,19 @@ export function QuoteForm() {
     const email = String(data.get('email') ?? '').trim()
     const commune = String(data.get('commune') ?? '').trim()
     const service = String(data.get('service') ?? '')
+    const workType = String(data.get('workType') ?? '')
+    const openings = String(data.get('openings') ?? '').trim()
     const detail = String(data.get('message') ?? '').trim()
     const message = [
       `Hola, soy ${name}. Quiero solicitar una evaluación de Mallas Saru.`,
+      '',
+      'Origen: Formulario web',
       `Teléfono de contacto: ${phone}`,
       email ? `Correo: ${email}` : null,
       `Comuna: ${commune}`,
+      `Tipo de trabajo: ${workTypeLabels[workType] ?? 'Por definir'}`,
       `Espacio: ${serviceLabels[service] ?? 'Por definir'}`,
+      `Cantidad aproximada de ventanas, balcones o vanos: ${openings}`,
       `Detalle: ${detail}`,
     ].filter(Boolean).join('\n')
 
@@ -50,7 +60,7 @@ export function QuoteForm() {
               <li><span>2</span><div><strong>Cuéntanos para quién</strong><small>Niños, mascotas, personas mayores o uso institucional.</small></div></li>
               <li><span>3</span><div><strong>Envía fotos y comuna</strong><small>Te orientaremos sobre visita, alcance y siguientes pasos.</small></div></li>
             </ol>
-            <a className="button button--white" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">
+            <a className="button button--white" href={whatsappPhotosUrl} target="_blank" rel="noopener noreferrer">
               <MessageCircle aria-hidden="true" size={18} /> Enviar fotos por WhatsApp
             </a>
           </div>
@@ -79,6 +89,15 @@ export function QuoteForm() {
                   <input id="quote-commune" type="text" name="commune" placeholder="Ej. La Florida" autoComplete="address-level2" minLength={2} maxLength={80} required />
                 </div>
                 <div className="field-group field-group--wide">
+                  <label htmlFor="quote-work-type">Tipo de trabajo</label>
+                  <select id="quote-work-type" name="workType" defaultValue="" required>
+                    <option value="" disabled>Selecciona una opción</option>
+                    <option value="nueva">Instalación nueva</option>
+                    <option value="inspeccion">Inspección o mantenimiento</option>
+                    <option value="recambio">Recambio de malla existente</option>
+                  </select>
+                </div>
+                <div className="field-group">
                   <label htmlFor="quote-service">Espacio a proteger</label>
                   <select id="quote-service" name="service" defaultValue="" required>
                     <option value="" disabled>Selecciona una opción</option>
@@ -88,6 +107,11 @@ export function QuoteForm() {
                     <option value="mantencion">Inspección o recambio</option>
                     <option value="otro">Otro espacio</option>
                   </select>
+                </div>
+                <div className="field-group">
+                  <label htmlFor="quote-openings">Cantidad aproximada</label>
+                  <input id="quote-openings" type="number" name="openings" placeholder="Ej. 3" inputMode="numeric" min="1" max="50" required />
+                  <small className="field-hint">Total de ventanas, balcones o vanos.</small>
                 </div>
                 <div className="field-group field-group--wide">
                   <label htmlFor="quote-message">¿Qué riesgo necesitas controlar?</label>

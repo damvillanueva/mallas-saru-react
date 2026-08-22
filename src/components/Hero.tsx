@@ -1,5 +1,5 @@
 import { ArrowRight, MessageCircle, ShieldCheck } from 'lucide-react'
-import { whatsappQuoteUrl } from '../data/siteData'
+import { whatsappHeroUrl } from '../data/siteData'
 
 export function Hero() {
   return (
@@ -16,12 +16,12 @@ export function Hero() {
             proceso claro de evaluación, instalación y postventa.
           </p>
           <div className="hero-actions">
-            <a className="button button--primary" href={whatsappQuoteUrl} target="_blank" rel="noopener noreferrer">
+            <a className="button button--primary" href={whatsappHeroUrl} target="_blank" rel="noopener noreferrer">
               <MessageCircle aria-hidden="true" size={19} />
               Cotizar por WhatsApp
             </a>
-            <a className="button button--ghost" href="#protocolo">
-              Conocer el protocolo
+            <a className="button button--ghost" href="#trabajos">
+              Ver trabajos reales
             </a>
           </div>
           <ul className="hero-facts" aria-label="Características del servicio">

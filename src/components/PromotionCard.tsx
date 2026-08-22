@@ -1,12 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { MessageCircle, ShieldCheck, X } from 'lucide-react'
 import familyImage from '../assets/img/trabajos/clientes_Satisfechos/1.webp'
+import { whatsappPromotionUrl } from '../data/siteData'
 
-const storageKey = 'mallas-saru-promotion-seen-at'
+const storageKey = 'mallas-saru-promotion-v2-seen-at'
 const displayInterval = 7 * 24 * 60 * 60 * 1000
 const promotionEndsAt = new Date('2026-11-01T00:00:00-03:00').getTime()
-const promotionalWhatsappUrl =
-  'https://wa.me/56972022406?text=Hola%2C%20soy%20nuevo%2Fa%20cliente%20y%20quiero%20cotizar%20mi%20primera%20instalaci%C3%B3n%20con%20el%2010%25%20de%20bienvenida.'
 
 function wasRecentlySeen() {
   try {
@@ -19,96 +18,114 @@ function wasRecentlySeen() {
 
 export function PromotionCard() {
   const [isVisible, setIsVisible] = useState(false)
+  const modalRef = useRef<HTMLElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
 
-  const dismissPromotion = () => {
+  const dismissPromotion = useCallback(() => {
     try {
       window.localStorage.setItem(storageKey, String(Date.now()))
     } catch {
       // El cierre sigue funcionando aunque el navegador no permita guardar preferencias.
     }
     setIsVisible(false)
-  }
+  }, [])
 
   useEffect(() => {
     if (Date.now() >= promotionEndsAt || wasRecentlySeen()) return
 
-    let hasOpened = false
-    let timerId = 0
-
-    const showPromotion = () => {
-      if (hasOpened) return
-      hasOpened = true
-      window.clearTimeout(timerId)
-      window.removeEventListener('scroll', showAfterScroll)
-      setIsVisible(true)
-    }
-
-    const showAfterScroll = () => {
-      const pageHeight = document.documentElement.scrollHeight
-      const currentProgress = (window.scrollY + window.innerHeight) / pageHeight
-      if (currentProgress >= 0.4) showPromotion()
-    }
-
-    timerId = window.setTimeout(showPromotion, 7000)
-    window.addEventListener('scroll', showAfterScroll, { passive: true })
-    showAfterScroll()
-
-    return () => {
-      window.clearTimeout(timerId)
-      window.removeEventListener('scroll', showAfterScroll)
-    }
+    const timerId = window.setTimeout(() => setIsVisible(true), 2200)
+    return () => window.clearTimeout(timerId)
   }, [])
 
   useEffect(() => {
-    document.documentElement.classList.toggle('promotion-is-open', isVisible)
-
     if (!isVisible) return
-    const closeWithEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') dismissPromotion()
+
+    const previousOverflow = document.body.style.overflow
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null
+    document.body.style.overflow = 'hidden'
+    closeButtonRef.current?.focus()
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        dismissPromotion()
+        return
+      }
+      if (event.key !== 'Tab') return
+
+      const focusable = modalRef.current?.querySelectorAll<HTMLElement>('button, a[href]')
+      if (!focusable?.length) return
+      const first = focusable[0]
+      const last = focusable[focusable.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
     }
-    document.addEventListener('keydown', closeWithEscape)
+
+    document.addEventListener('keydown', handleKeyDown)
     return () => {
-      document.documentElement.classList.remove('promotion-is-open')
-      document.removeEventListener('keydown', closeWithEscape)
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', handleKeyDown)
+      previouslyFocused?.focus()
     }
-  }, [isVisible])
+  }, [dismissPromotion, isVisible])
 
   if (!isVisible) return null
 
   return (
-    <aside
-      className="promotion-card"
-      role="dialog"
-      aria-modal="false"
-      aria-labelledby="promotion-title"
-      aria-describedby="promotion-description promotion-conditions"
-    >
-      <div className="promotion-card__media" aria-hidden="true">
-        <img src={familyImage} alt="" />
-        <span><ShieldCheck size={17} /> Mallas Saru</span>
-      </div>
-      <div className="promotion-card__body">
-        <button className="promotion-card__close" type="button" aria-label="Cerrar promoción" onClick={dismissPromotion}>
-          <X aria-hidden="true" size={19} />
-        </button>
-        <p className="promotion-card__badge">10% de bienvenida</p>
-        <h2 id="promotion-title">Protege ese espacio que tanto te preocupa.</h2>
-        <p id="promotion-description">
-          Nuevos clientes obtienen un <strong>10% de descuento</strong> en su primera instalación de mallas de seguridad.
-        </p>
-        <a
-          className="promotion-card__action"
-          href={promotionalWhatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={dismissPromotion}
-        >
-          <MessageCircle aria-hidden="true" size={18} /> Solicitar cotización
-        </a>
-        <small id="promotion-conditions">
-          Válido hasta el 31 de octubre de 2026. Un beneficio por cliente. No acumulable con convenios u otras promociones.
-        </small>
-      </div>
-    </aside>
+    <div className="promotion-modal">
+      <aside
+        ref={modalRef}
+        className="promotion-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="promotion-title"
+        aria-describedby="promotion-description promotion-conditions"
+      >
+        <div className="promotion-card__media" aria-hidden="true">
+          <img src={familyImage} alt="" />
+          <div className="promotion-card__media-copy">
+            <span><ShieldCheck size={18} /> Mallas Saru</span>
+            <strong>Tu seguridad,<br />en nuestras manos.</strong>
+          </div>
+        </div>
+        <div className="promotion-card__body">
+          <button
+            ref={closeButtonRef}
+            className="promotion-card__close"
+            type="button"
+            aria-label="Cerrar promoción"
+            onClick={dismissPromotion}
+          >
+            <X aria-hidden="true" size={21} />
+          </button>
+          <p className="promotion-card__eyebrow">Beneficio exclusivo para nuevos clientes</p>
+          <p className="promotion-card__badge"><strong>10%</strong> de descuento</p>
+          <h2 id="promotion-title">Da el primer paso hacia un hogar más protegido.</h2>
+          <p id="promotion-description">
+            Obtén un <strong>10% de descuento</strong> en tu primera instalación de mallas de seguridad.
+          </p>
+          <a
+            className="promotion-card__action"
+            href={whatsappPromotionUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={dismissPromotion}
+          >
+            <MessageCircle aria-hidden="true" size={20} /> Quiero cotizar con descuento
+          </a>
+          <div className="promotion-card__reassurance">
+            <ShieldCheck aria-hidden="true" size={20} />
+            <span><strong>Evaluación previa y trabajo respaldado</strong>Te explicamos el alcance, las fijaciones y la garantía antes de instalar.</span>
+          </div>
+          <small id="promotion-conditions">
+            Válido hasta el 31 de octubre de 2026. Un beneficio por cliente. No acumulable con convenios u otras promociones.
+          </small>
+        </div>
+      </aside>
+    </div>
   )
 }

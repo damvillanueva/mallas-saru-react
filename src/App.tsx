@@ -3,6 +3,8 @@ import { About } from './components/About'
 import { AccessibilityMenu } from './components/AccessibilityMenu'
 import { Convenios } from './components/Convenios'
 import { Footer } from './components/Footer'
+import { FaqCallout } from './components/FaqCallout'
+import { FrequentlyAskedQuestions } from './components/FrequentlyAskedQuestions'
 import { GoogleReviews } from './components/GoogleReviews'
 import { GuaranteePolicy } from './components/GuaranteePolicy'
 import { Header } from './components/Header'
@@ -20,6 +22,7 @@ import type { PortfolioGroup } from './data/siteData'
 function App() {
   const [openGallery, setOpenGallery] = useState<PortfolioGroup | null>(null)
   const [isGuaranteeOpen, setIsGuaranteeOpen] = useState(false)
+  const [isFaqOpen, setIsFaqOpen] = useState(false)
 
   return (
     <>
@@ -31,17 +34,22 @@ function App() {
       <main id="contenido">
         <Hero />
         <Services />
-        <QualityProtocol />
-        <SafetyFramework />
         <Portfolio onOpen={setOpenGallery} />
         <GoogleReviews />
+        <QualityProtocol />
+        <SafetyFramework />
         <Convenios />
         <About />
+        <FaqCallout onOpen={() => setIsFaqOpen(true)} />
         <QuoteForm />
       </main>
-      <Footer onOpenGuarantee={() => setIsGuaranteeOpen(true)} />
+      <Footer
+        onOpenFaq={() => setIsFaqOpen(true)}
+        onOpenGuarantee={() => setIsGuaranteeOpen(true)}
+      />
       {openGallery && <Lightbox group={openGallery} onClose={() => setOpenGallery(null)} />}
       <GuaranteePolicy isOpen={isGuaranteeOpen} onClose={() => setIsGuaranteeOpen(false)} />
+      <FrequentlyAskedQuestions isOpen={isFaqOpen} onClose={() => setIsFaqOpen(false)} />
     </>
   )
 }

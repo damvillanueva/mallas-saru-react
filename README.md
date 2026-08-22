@@ -19,9 +19,12 @@ Migración del sitio estático [Percy-182/mallas_Saru](https://github.com/Percy-
 - Formulario de cotización que prepara el mensaje localmente y permite al visitante confirmar el envío en WhatsApp.
 - Promoción de bienvenida con vigencia, condiciones y frecuencia de aparición controladas.
 - Política de garantía accesible, con cobertura, exclusiones y canal de revisión.
+- Preguntas frecuentes independientes, presentadas en un diálogo con respuestas desplegables.
+- Enlaces oficiales para consultar y publicar reseñas en Google, más acceso al perfil público de Habitissimo.
+- Mensajes de WhatsApp diferenciados por sección para reconocer el origen de cada consulta.
 - Secciones de servicios, protocolo de instalación, marco de seguridad, experiencia y contacto.
 - Fotografías optimizadas en WebP, favicon e imagen Open Graph para compartir el sitio.
-- Metadatos SEO y Open Graph preparados para el dominio definitivo.
+- Metadatos SEO, URL canónica, datos estructurados, `robots.txt` y `sitemap.xml` preparados para `mallas-saru.cl`.
 
 ## Seguridad y privacidad del código
 
@@ -63,6 +66,18 @@ scripts/
 └── optimize_images.py # Regenera WebP, favicon e imagen social desde recursos reales
 public/           # Iconos e imagen social listos para la compilación
 ```
+
+## Activación al conectar el dominio
+
+El código queda preparado para `https://mallas-saru.cl/`, pero el cambio de hosting no forma parte de la ejecución local. Cuando se autorice la migración se debe:
+
+1. Publicar la compilación `dist/` con HTTPS.
+2. Verificar `robots.txt`, `sitemap.xml`, la URL canónica y la imagen social desde el dominio real.
+3. Registrar el dominio en Google Search Console y enviar `https://mallas-saru.cl/sitemap.xml`.
+4. Añadir el sitio a Microsoft Clarity y colocar únicamente el identificador entregado por la cuenta oficial.
+5. Actualizar el sitio web, servicios, cobertura, fotografías y enlace de reseñas en Google Business Profile.
+6. Crear un monitor HTTPS en UptimeRobot cuando la nueva versión esté pública.
+7. Si se desea mostrar el widget contratado de Habitissimo, copiar su código oficial desde `Tu Negocio → Añade un widget en tu web`; mientras tanto el sitio enlaza la ficha pública sin extraer opiniones automáticamente.
 
 ## Diferencia respecto del proyecto original
 
