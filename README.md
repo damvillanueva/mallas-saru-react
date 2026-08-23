@@ -24,7 +24,7 @@ Migración del sitio estático [Percy-182/mallas_Saru](https://github.com/Percy-
 - Mensajes de WhatsApp diferenciados por sección para reconocer el origen de cada consulta.
 - Secciones de servicios, protocolo de instalación, marco de seguridad, experiencia y contacto.
 - Fotografías optimizadas en WebP, favicon e imagen Open Graph para compartir el sitio.
-- Metadatos SEO, URL canónica, datos estructurados, `robots.txt` y `sitemap.xml` preparados para `mallas-saru.cl`.
+- Metadatos SEO, URL canónica, datos estructurados, `robots.txt` y `sitemap.xml` preparados para `mallassaru.cl`.
 
 ## Seguridad y privacidad del código
 
@@ -69,11 +69,11 @@ public/           # Iconos e imagen social listos para la compilación
 
 ## Activación al conectar el dominio
 
-El código queda preparado para `https://mallas-saru.cl/`, pero el cambio de hosting no forma parte de la ejecución local. Cuando se autorice la migración se debe:
+El código queda preparado para `https://mallassaru.cl/`, pero el cambio de hosting no forma parte de la ejecución local. Cuando se autorice la migración se debe:
 
 1. Publicar la compilación `dist/` con HTTPS.
 2. Verificar `robots.txt`, `sitemap.xml`, la URL canónica y la imagen social desde el dominio real.
-3. Registrar el dominio en Google Search Console y enviar `https://mallas-saru.cl/sitemap.xml`.
+3. Registrar el dominio en Google Search Console y enviar `https://mallassaru.cl/sitemap.xml`.
 4. Añadir el sitio a Microsoft Clarity y colocar únicamente el identificador entregado por la cuenta oficial.
 5. Actualizar el sitio web, servicios, cobertura, fotografías y enlace de reseñas en Google Business Profile.
 6. Crear un monitor HTTPS en UptimeRobot cuando la nueva versión esté pública.
