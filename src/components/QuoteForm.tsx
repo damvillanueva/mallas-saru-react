@@ -18,9 +18,24 @@ const workTypeLabels: Record<string, string> = {
 }
 
 const projectTypeLabels: Record<string, string> = {
-  hogar: 'Vivienda particular',
-  condominio: 'Condominio o administración',
-  proyecto: 'Empresa o proyecto inmobiliario',
+  hogar: 'mi hogar',
+  condominio: 'un condominio o comunidad',
+  proyecto: 'una empresa o proyecto inmobiliario',
+}
+
+const workTypeMessages: Record<string, string> = {
+  nueva: 'una instalación nueva',
+  inspeccion: 'una inspección o mantenimiento',
+  recambio: 'el recambio de una malla existente',
+}
+
+const serviceMessages: Record<string, string> = {
+  balcon: 'un balcón o terraza',
+  ventana: 'una o más ventanas',
+  mascotas: 'un espacio para mascotas',
+  multiple: 'varios departamentos o áreas comunes',
+  mantencion: 'mallas que necesitan revisión o recambio',
+  otro: 'otro tipo de espacio',
 }
 
 const detailPlaceholders: Record<string, string> = {
@@ -50,17 +65,22 @@ export function QuoteForm() {
     const workType = String(data.get('workType') ?? '')
     const detail = String(data.get('message') ?? '').trim()
     const message = [
-      `Hola, soy ${name}. Quiero solicitar una evaluación de Mallas Saru.`,
+      `Hola, soy ${name}.`,
       '',
-      'Origen: Formulario web',
-      `Contacto: ${projectTypeLabels[contactType] ?? 'Por definir'}`,
+      `Me gustaría solicitar una cotización con Mallas Saru para ${projectTypeLabels[contactType] ?? 'mi proyecto'}.`,
+      `Necesito ${workTypeMessages[workType] ?? workTypeLabels[workType] ?? 'orientación'} para ${serviceMessages[service] ?? serviceLabels[service] ?? 'un espacio por definir'}.`,
+      `El trabajo sería en la comuna de ${commune}.`,
+      '',
+      'Les cuento un poco más:',
+      detail,
+      '',
+      'Mis datos de contacto:',
       `Teléfono: ${phone}`,
       email ? `Correo: ${email}` : null,
-      `Comuna: ${commune}`,
-      `Tipo de trabajo: ${workTypeLabels[workType] ?? 'Por definir'}`,
-      `Espacio: ${serviceLabels[service] ?? 'Por definir'}`,
-      `Descripción: ${detail}`,
-    ].filter(Boolean).join('\n')
+      '',
+      'Quedo pendiente para coordinar los próximos pasos.',
+      'Muchas gracias.',
+    ].filter((line): line is string => line !== null).join('\n')
 
     window.location.assign(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`)
   }
