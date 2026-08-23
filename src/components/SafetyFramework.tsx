@@ -50,8 +50,8 @@ export function SafetyFramework() {
             <p className="section-kicker">Seguridad para la vida en casa</p>
             <h2>Una protección cercana, pensada para quienes más quieres.</h2>
             <p className="safety-content__lead">
-              Cada hogar y cada comunidad tienen necesidades distintas. Por eso unimos evaluación técnica,
-              materiales certificados y una conversación clara antes de instalar.
+              Cada familia vive su espacio de manera distinta. Antes de instalar revisamos el lugar, conversamos
+              sobre quién necesita protección y te explicamos la solución recomendada.
             </p>
             <div className="principles-grid">
               {principles.map((principle, index) => {

@@ -18,7 +18,7 @@ export function Footer({ onOpenFaq, onOpenGuarantee }: FooterProps) {
         <div className="footer-cta">
           <div>
             <p>Conversemos sobre tu espacio</p>
-            <h2>Una protección bien pensada comienza con una buena evaluación.</h2>
+            <h2>Cuéntanos qué necesitas proteger y te ayudamos a cotizar.</h2>
           </div>
           <a className="button button--primary" href={whatsappFooterUrl} target="_blank" rel="noopener noreferrer">
             <MessageCircle aria-hidden="true" size={18} /> Cotizar por WhatsApp

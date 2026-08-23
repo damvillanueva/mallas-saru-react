@@ -11,8 +11,8 @@ export function Portfolio({ onOpen }: PortfolioProps) {
       <div className="container">
         <header className="section-intro section-intro--split">
           <div>
-            <p className="section-kicker">Portafolio real</p>
-            <h2>Instalaciones realizadas por Mallas Saru.</h2>
+            <p className="section-kicker">Trabajos realizados</p>
+            <h2>Conoce algunas de nuestras instalaciones.</h2>
           </div>
           <p>Revisa balcones, ventanas y espacios residenciales. Selecciona una categoría para abrir la galería.</p>
         </header>
@@ -28,7 +28,7 @@ export function Portfolio({ onOpen }: PortfolioProps) {
               <img src={group.cover} alt={group.alt} loading="lazy" className="portfolio-img" />
               <span className="portfolio-overlay">
                 <span className="portfolio-copy">
-                  <span className="portfolio-action" aria-hidden="true">Proyecto real</span>
+                  <span className="portfolio-action" aria-hidden="true">Trabajo realizado</span>
                   <strong>{group.title}</strong>
                   <small>{group.description}</small>
                 </span>

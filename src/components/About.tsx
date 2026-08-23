@@ -6,12 +6,12 @@ const strengths = [
   {
     icon: BadgeCheck,
     title: 'Profesionales certificados',
-    text: 'Equipo técnico capacitado para ejecutar instalaciones cuidadas y consistentes.',
+    text: 'Equipo técnico capacitado y certificado para realizar cada instalación.',
   },
   {
     icon: Sun,
     title: 'Materiales premium',
-    text: 'Materiales con respaldo técnico, preparados para exposición a intemperie y rayos UV.',
+    text: 'Mallas resistentes a la intemperie y a la exposición a rayos UV.',
   },
   {
     icon: ShieldCheck,
@@ -45,12 +45,14 @@ export function About() {
             <p className="section-kicker">Sobre Mallas Saru</p>
             <h2>Más de 10 años cuidando lo que más importa.</h2>
             <p className="about-lead">
-              Nos especializamos en soluciones de seguridad en altura para proteger familias, mascotas,
-              comunidades, equipos de trabajo y patrimonio.
+              En Mallas Saru llevamos más de 10 años instalando soluciones de seguridad en altura para familias,
+              mascotas, comunidades, trabajadores y patrimonio. Utilizamos materiales de primera calidad que
+              cumplen estándares internacionales de seguridad y cuentan con certificación de resistencia. Todas
+              nuestras instalaciones tienen garantía.
             </p>
             <div className="women-led-note">
               <span aria-hidden="true"><Venus size={20} /></span>
-              <p><strong>Empresa gestionada y dirigida por una mujer</strong><small>Liderazgo femenino, cercanía y excelencia en cada proyecto.</small></p>
+              <p><strong>Empresa liderada por una mujer</strong><small>Presente en la gestión y también en terreno cuando el proyecto lo requiere.</small></p>
             </div>
 
             <div className="about-strengths">
@@ -64,12 +66,14 @@ export function About() {
 
             <div className="about-commitment">
               <div>
-                <p>Nuestro compromiso</p>
-                <h3>Una solución responsable para cada proyecto.</h3>
+                <p>Nuestra historia</p>
+                <h3>Un oficio que creció junto a sus clientes.</h3>
               </div>
               <p>
-                Escuchamos tus necesidades y proponemos una alternativa acorde con el espacio y el presupuesto,
-                trabajando con responsabilidad, puntualidad y transparencia.
+                Mallas Saru nació de la necesidad de salir adelante, trabajando primero en aluminio, ventanas y
+                espejos. Las recomendaciones trajeron más proyectos y se sumaron personas de plena confianza. Los
+                llamamos colaboradores porque han sido parte esencial de nuestro crecimiento. Hoy ese equipo se
+                especializa en mallas de seguridad y mantiene una idea sencilla: cliente satisfecho, trabajo bien hecho.
               </p>
             </div>
 

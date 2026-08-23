@@ -49,28 +49,28 @@ export const services = [
     id: 'balcones-edificios',
     title: 'Balcones y edificios',
     description:
-      'Protección discreta para departamentos, terrazas, logias y espacios comunes, considerando el soporte y las reglas del condominio.',
+      'Protegemos balcones, terrazas, logias y espacios comunes, cuidando las terminaciones y las reglas del condominio.',
     detail: 'Familias · administradores · comunidades',
   },
   {
     id: 'ventanas',
     title: 'Ventanas y vanos',
     description:
-      'Soluciones para ventanas correderas, abatibles y otros puntos de riesgo, con revisión previa del marco y su forma de apertura.',
+      'Instalamos en ventanas correderas, abatibles y otros vanos sin perder de vista el marco ni su forma de apertura.',
     detail: 'Niños · personas mayores · cuidados especiales',
   },
   {
     id: 'mascotas',
     title: 'Seguridad para mascotas',
     description:
-      'Evaluación del espacio según tamaño, conducta y exposición de la mascota para reducir puntos de fuga y caída.',
+      'Revisamos el espacio y las necesidades de tu mascota para reducir puntos de fuga y caídas.',
     detail: 'Gatos · perros pequeños · espacios protegidos',
   },
   {
     id: 'mantencion-recambio',
     title: 'Inspección y recambio',
     description:
-      'Revisión de tensión, fijaciones, desgaste visible y daños por uso, obras o intemperie, con recomendación documentada.',
+      'Revisamos tensión, fijaciones y desgaste para indicarte si la malla necesita mantención o recambio.',
     detail: 'Diagnóstico · mantención · renovación',
   },
 ]
@@ -131,57 +131,47 @@ export const portfolioGroups: PortfolioGroup[] = [
 
 export const whatsappNumber = '56972022406'
 
-export const createWhatsAppUrl = (origin: string, request: string) =>
-  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hola, ${request}\n\nOrigen: ${origin}`)}`
+export const createWhatsAppUrl = (message: string) =>
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
 
 export const whatsappQuoteUrl = createWhatsAppUrl(
-  'Sitio web',
-  'quiero evaluar un espacio para instalar mallas de seguridad.',
+  'Hola, quisiera cotizar una instalación de mallas de seguridad. ¿Me pueden orientar?',
 )
 
 export const whatsappHeaderUrl = createWhatsAppUrl(
-  'Encabezado del sitio',
-  'quiero cotizar una instalación de mallas de seguridad.',
+  'Hola, quisiera cotizar una instalación de mallas de seguridad. ¿Qué información necesitan?',
 )
 
 export const whatsappHeroUrl = createWhatsAppUrl(
-  'Inicio',
-  'vi la presentación de Mallas Saru y quiero cotizar un espacio.',
+  'Hola, vi sus trabajos y me gustaría cotizar mallas de seguridad para mi espacio.',
 )
 
 export const whatsappFloatingUrl = createWhatsAppUrl(
-  'Botón flotante',
-  'quiero cotizar una instalación de mallas de seguridad.',
+  'Hola, me gustaría cotizar una instalación de mallas de seguridad. ¿Me pueden ayudar?',
 )
 
 export const whatsappFooterUrl = createWhatsAppUrl(
-  'Pie de página',
-  'quiero solicitar una evaluación para mi espacio.',
+  'Hola, quisiera cotizar mallas de seguridad para mi espacio. ¿Qué datos necesitan?',
 )
 
 export const whatsappPhotosUrl = createWhatsAppUrl(
-  'Formulario web · envío de fotografías',
-  'quiero enviar fotografías y medidas aproximadas para solicitar una cotización.',
+  'Hola, quisiera enviarles fotografías y medidas aproximadas para cotizar una instalación de mallas de seguridad.',
 )
 
 export const whatsappFaqUrl = createWhatsAppUrl(
-  'Preguntas frecuentes',
-  'revisé las preguntas frecuentes y necesito orientación sobre mi espacio.',
+  'Hola, tengo una consulta sobre la instalación de mallas de seguridad. ¿Me pueden orientar?',
 )
 
 export const whatsappGuaranteeUrl = createWhatsAppUrl(
-  'Política de garantía',
-  'quiero solicitar orientación o una revisión relacionada con la garantía de instalación.',
+  'Hola, necesito orientación sobre la garantía de una instalación de Mallas Saru.',
 )
 
 export const whatsappPromotionUrl = createWhatsAppUrl(
-  'Promoción 10% para nuevos clientes',
-  'soy nuevo/a cliente y quiero cotizar mi primera instalación con el 10% de bienvenida.',
+  'Hola, soy cliente nuevo y quisiera cotizar mi primera instalación con el 10% de descuento.',
 )
 
 export const whatsappConvenioUrl = createWhatsAppUrl(
-  'Convenios',
-  'quiero consultar por el beneficio de Tarjeta Vecino para instalar o recambiar mallas.',
+  'Hola, quisiera consultar por el beneficio de Tarjeta Vecino para instalar o recambiar mallas de seguridad.',
 )
 
 export const googleBusinessUrl = 'https://share.google/WlhdQ9PblRoudbSTp'

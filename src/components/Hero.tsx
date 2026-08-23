@@ -12,8 +12,8 @@ export function Hero() {
           </p>
           <h1>Protección en altura, instalada con criterio.</h1>
           <p className="hero-lead">
-            Mallas de seguridad para balcones, ventanas y espacios de riesgo. Conservamos la vista y añadimos un
-            proceso claro de evaluación, instalación y postventa.
+            Instalamos mallas de seguridad en balcones, ventanas y otros espacios de riesgo, cuidando la vista y
+            las terminaciones. Te acompañamos desde la primera consulta hasta la postventa.
           </p>
           <div className="hero-actions">
             <a className="button button--primary" href={whatsappHeroUrl} target="_blank" rel="noopener noreferrer">
@@ -34,10 +34,9 @@ export function Hero() {
         <aside className="hero-assurance" aria-label="Compromiso de información responsable">
           <span className="assurance-icon" aria-hidden="true"><ShieldCheck size={23} /></span>
           <p className="assurance-kicker">Compromiso Saru</p>
-          <h2>Materiales certificados y trabajo bien informado.</h2>
+          <h2>Materiales certificados e instalación con garantía.</h2>
           <p>
-            Trabajamos con materiales certificados y respaldo técnico. Cada propuesta identifica la solución,
-            el soporte, las fijaciones, la garantía y el mantenimiento recomendado para el espacio.
+            Antes de comenzar te explicamos qué malla utilizaremos, cómo se fijará y qué incluye la garantía.
           </p>
           <a href="#seguridad">Ver marco de seguridad <ArrowRight aria-hidden="true" size={17} /></a>
         </aside>

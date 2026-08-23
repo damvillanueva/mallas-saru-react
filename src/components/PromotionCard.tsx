@@ -104,7 +104,7 @@ export function PromotionCard() {
           </button>
           <p className="promotion-card__eyebrow">Beneficio exclusivo para nuevos clientes</p>
           <p className="promotion-card__badge"><strong>10%</strong> de descuento</p>
-          <h2 id="promotion-title">Da el primer paso hacia un hogar más protegido.</h2>
+          <h2 id="promotion-title">Protege tu balcón o ventanas con un 10% de descuento.</h2>
           <p id="promotion-description">
             Obtén un <strong>10% de descuento</strong> en tu primera instalación de mallas de seguridad.
           </p>
@@ -119,7 +119,7 @@ export function PromotionCard() {
           </a>
           <div className="promotion-card__reassurance">
             <ShieldCheck aria-hidden="true" size={20} />
-            <span><strong>Evaluación previa y trabajo respaldado</strong>Te explicamos el alcance, las fijaciones y la garantía antes de instalar.</span>
+            <span><strong>Primero revisamos tu espacio</strong>Te explicamos las fijaciones, el alcance y la garantía antes de instalar.</span>
           </div>
           <small id="promotion-conditions">
             Válido hasta el 31 de octubre de 2026. Un beneficio por cliente. No acumulable con convenios u otras promociones.

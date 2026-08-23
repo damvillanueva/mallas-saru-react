@@ -23,8 +23,8 @@ export function Services() {
             <h2>Una instalación distinta <span>para cada espacio.</span></h2>
           </div>
           <p>
-            Antes de cotizar se debe entender quién necesita protección, cómo se usa el lugar y sobre qué material
-            se realizará la fijación.
+            No todos los espacios se protegen de la misma manera. Antes de cotizar revisamos quién usa el lugar,
+            cómo se abre y sobre qué superficie instalaremos.
           </p>
         </div>
 
