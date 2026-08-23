@@ -1,4 +1,5 @@
-import { ArrowUpRight, MessageSquarePlus, MessagesSquare, Star } from 'lucide-react'
+import { ArrowUpRight, MessageSquarePlus, ShieldCheck, Star } from 'lucide-react'
+import { FcGoogle } from 'react-icons/fc'
 import { googleBusinessUrl, googleReviewUrl, habitissimoProfileUrl } from '../data/siteData'
 
 export function GoogleReviews() {
@@ -8,44 +9,55 @@ export function GoogleReviews() {
         <header className="section-intro section-intro--split reviews-heading">
           <div>
             <p className="section-kicker">Opiniones reales</p>
-            <h2>Conoce la experiencia de nuestros clientes.</h2>
+            <h2>Dos lugares para conocer experiencias reales.</h2>
           </div>
-          <div className="google-rating-summary" aria-label="Reseñas disponibles en Google">
-            <span className="google-source">Google</span>
-            <span className="google-stars" aria-hidden="true">
-              {[0, 1, 2, 3, 4].map((star) => <Star size={17} fill="currentColor" key={star} />)}
-            </span>
-            <small>Opiniones en la ficha oficial</small>
-          </div>
+          <p className="reviews-heading__lead">Consulta siempre la fuente original, sus fechas y la experiencia completa publicada por cada cliente.</p>
         </header>
 
-        <div className="reviews-direct">
-          <span className="reviews-direct__icon" aria-hidden="true"><Star size={25} fill="currentColor" /></span>
-          <div>
-            <p className="reviews-direct__label">Fuente pública y verificable</p>
-            <h3>Lee las reseñas directamente en Google.</h3>
-            <p>Revisa los comentarios, las fechas de publicación y la valoración general en la ficha oficial de Mallas Saru.</p>
-          </div>
-          <div className="reviews-direct__actions">
-            <a className="button button--primary" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
-              Ver reseñas <ArrowUpRight aria-hidden="true" size={17} />
+        <div className="review-platforms">
+          <article className="review-platform review-platform--google">
+            <div className="review-platform__topline">
+              <a className="review-brand review-brand--google" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer" aria-label="Abrir ficha de Mallas Saru en Google">
+                <span><FcGoogle aria-hidden="true" /></span>
+                <strong>Google</strong>
+              </a>
+              <span className="review-source-badge"><ShieldCheck aria-hidden="true" size={14} /> Fuente oficial</span>
+            </div>
+            <div className="review-platform__rating" aria-label="Calificación máxima visible en Google">
+              <strong>Experiencias en Google</strong>
+              <span aria-hidden="true">{[0, 1, 2, 3, 4].map((star) => <Star size={20} fill="currentColor" key={star} />)}</span>
+              <small>Consulta comentarios, fechas y valoración directamente en la ficha.</small>
+            </div>
+            <div className="review-platform__actions">
+              <a className="review-action review-action--primary" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
+                Ver reseñas <ArrowUpRight aria-hidden="true" size={17} />
+              </a>
+              <a className="review-action review-action--secondary" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+                <MessageSquarePlus aria-hidden="true" size={17} /> Déjanos una reseña
+              </a>
+            </div>
+          </article>
+
+          <article className="review-platform review-platform--habitissimo">
+            <div className="review-platform__topline">
+              <a className="review-brand review-brand--habitissimo" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil público de Mallas Saru en Habitissimo">
+                <span aria-hidden="true">h</span>
+                <strong>habitissimo</strong>
+              </a>
+              <span className="review-source-badge"><ShieldCheck aria-hidden="true" size={14} /> Perfil público</span>
+            </div>
+            <div className="review-platform__rating">
+              <strong>Más opiniones sobre nuestro trabajo</strong>
+              <p>Revisa en Habitissimo las experiencias publicadas y el perfil comercial de Mallas Saru.</p>
+              <small>El contenido se consulta en su plataforma para mantener visible la fuente original.</small>
+            </div>
+            <a className="review-action review-action--habitissimo" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer">
+              Ver opiniones en Habitissimo <ArrowUpRight aria-hidden="true" size={17} />
             </a>
-            <a className="reviews-review-link" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
-              <MessageSquarePlus aria-hidden="true" size={17} /> Déjanos una reseña
-            </a>
-          </div>
+          </article>
         </div>
 
-        <a className="habitissimo-reviews" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer">
-          <span aria-hidden="true"><MessagesSquare size={20} /></span>
-          <div>
-            <small>Otra fuente pública</small>
-            <strong>Consulta también las opiniones de Mallas Saru en Habitissimo.</strong>
-          </div>
-          <span>Ver opiniones <ArrowUpRight aria-hidden="true" size={16} /></span>
-        </a>
-
-        <p className="reviews-disclosure">Los enlaces abren las fuentes originales. No entregamos beneficios a cambio de publicar una opinión.</p>
+        <p className="reviews-disclosure"><ShieldCheck aria-hidden="true" size={14} /> Los enlaces abren las fuentes originales. No entregamos beneficios a cambio de publicar una opinión.</p>
       </div>
     </section>
   )
