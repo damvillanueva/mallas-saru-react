@@ -9,36 +9,44 @@ type FrequentlyAskedQuestionsProps = {
 
 const questions = [
   {
-    question: '¿Cuánto demora una instalación?',
-    answer: 'Depende de la cantidad de vanos, el tipo de soporte y el acceso al lugar. Después de revisar fotografías o realizar una visita podemos indicar un tiempo estimado para ese proyecto.',
+    question: '¿Pueden cotizar con fotografías?',
+    answer: 'Sí. Para preparar una primera cotización necesitamos la comuna, medidas aproximadas y fotografías donde se vea el espacio completo y las superficies de fijación. Indícanos también cuántas ventanas, balcones o espacios deseas proteger. Si hace falta revisar el lugar con más detalle, coordinamos una visita.',
   },
   {
-    question: '¿Necesitan visitar el lugar antes de cotizar?',
-    answer: 'Podemos preparar una primera orientación con fotografías, medidas aproximadas y la comuna. Si el soporte, el acceso o el diseño requieren una revisión más precisa, coordinamos una evaluación en terreno.',
+    question: '¿Cuánto demora la instalación?',
+    answer: 'Depende de la cantidad de ventanas o balcones, la superficie donde se fijará la malla y el acceso al lugar. Cuando revisemos las fotografías o visitemos el espacio podremos darte un tiempo estimado.',
   },
   {
-    question: '¿Qué información debo enviar para cotizar?',
-    answer: 'Necesitamos saber la comuna, el tipo de espacio, cuántas ventanas, balcones o vanos deseas proteger y medidas aproximadas. Las fotografías generales y de los bordes ayudan a evaluar las fijaciones.',
+    question: '¿Instalan mallas para niños y mascotas?',
+    answer: 'Sí. Revisamos quién necesita protección, cómo se usa el lugar y, en el caso de mascotas, su tamaño y comportamiento. La malla ayuda a prevenir caídas y escapes, pero no reemplaza la supervisión responsable.',
   },
   {
-    question: '¿Las mallas sirven para niños y mascotas?',
-    answer: 'Sí, la solución se define según el espacio y quién necesita protección. Consideramos dimensiones, aperturas, uso cotidiano y, en mascotas, su tamaño y conducta. La malla es preventiva y no reemplaza la supervisión responsable.',
+    question: '¿Podré seguir abriendo la ventana o la puerta?',
+    answer: 'Sí, siempre que el espacio permita una solución compatible. Antes de instalar revisamos la apertura, las manillas y el acceso para que ventanas y puertas puedan seguir utilizándose con normalidad.',
   },
   {
     question: '¿Puedo instalar una malla en un departamento?',
-    answer: 'Sí, pero antes conviene revisar el reglamento del edificio y consultar a la administración cuando la instalación pueda intervenir balcones, fachadas o puntos visibles desde el exterior.',
+    answer: 'Sí. Si la instalación afecta un balcón, la fachada o un punto visible desde el exterior, te recomendamos revisar el reglamento del edificio y consultar previamente a la administración.',
+  },
+  {
+    question: '¿Cotizan condominios o varios departamentos?',
+    answer: 'Sí. Atendemos administraciones, comunidades y proyectos que necesitan proteger varios departamentos o áreas comunes. Indícanos la ubicación, la cantidad aproximada de espacios y si existe una especificación técnica o fecha de entrega.',
   },
   {
     question: '¿Qué materiales utilizan?',
-    answer: 'Seleccionamos mallas y fijaciones aptas para el uso y la exposición de cada espacio. En la cotización informamos la solución propuesta y el respaldo técnico disponible del proveedor cuando corresponda.',
+    answer: 'Trabajamos con materiales de primera calidad, certificados por su resistencia y preparados para la exposición a la intemperie y a los rayos UV. La cotización indica la malla y las fijaciones recomendadas para el espacio.',
   },
   {
-    question: '¿La instalación requiere mantenimiento?',
-    answer: 'Sí. Recomendamos observar periódicamente la tensión, las fijaciones, los bordes y cualquier corte, desgaste o intervención posterior. Si existe una alteración visible, debe solicitarse una revisión antes de seguir usando el espacio.',
+    question: '¿Cómo sé si la malla necesita revisión o recambio?',
+    answer: 'Revisa periódicamente la tensión, las fijaciones y los bordes. Si observas cortes, piezas sueltas, desgaste, pérdida de tensión o daños provocados por obras, golpes o mordeduras, no manipules la malla y solicita una revisión.',
   },
   {
     question: '¿La instalación tiene garantía?',
-    answer: 'Sí. El alcance, plazo y exclusiones se informan en nuestra política de garantía y deben quedar registrados en la documentación del trabajo. Los daños posteriores por cortes, golpes, mordeduras o intervención de terceros no corresponden a una falla de instalación.',
+    answer: 'Sí. La garantía de instalación es de 12 meses y cubre fallas atribuibles al trabajo realizado por Mallas Saru. No cubre cortes, golpes, mordeduras, modificaciones ni daños posteriores causados por terceros. El detalle completo queda disponible en nuestra política de garantía.',
+  },
+  {
+    question: '¿En qué zonas trabajan?',
+    answer: 'Atendemos la Región Metropolitana, la VI Región y el litoral central de la V Región. Confírmanos la comuna al cotizar para revisar la cobertura y coordinar la visita.',
   },
 ]
 
@@ -106,8 +114,8 @@ export function FrequentlyAskedQuestions({ isOpen, onClose }: FrequentlyAskedQue
         </header>
 
         <div className="faq-sheet__intro">
-          <strong>Resolvamos las dudas más habituales.</strong>
-          <p>Abre una pregunta para conocer la respuesta. Si tu espacio tiene condiciones especiales, podemos orientarte directamente.</p>
+          <strong>Lo que más nos preguntan antes de cotizar.</strong>
+          <p>Si tu espacio tiene una condición distinta, escríbenos y lo revisamos contigo.</p>
         </div>
 
         <div className="faq-list">

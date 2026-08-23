@@ -54,9 +54,9 @@ export const services = [
   },
   {
     id: 'ventanas',
-    title: 'Ventanas y vanos',
+    title: 'Ventanas',
     description:
-      'Instalamos en ventanas correderas, abatibles y otros vanos sin perder de vista el marco ni su forma de apertura.',
+      'Instalamos en ventanas correderas, abatibles y otros puntos de riesgo, respetando el marco y su forma de apertura.',
     detail: 'Niños · personas mayores · cuidados especiales',
   },
   {
@@ -96,7 +96,7 @@ export const portfolioGroups: PortfolioGroup[] = [
   },
   {
     title: 'Ventanas protegidas',
-    description: 'Soluciones ajustadas a cada tipo de vano',
+    description: 'Soluciones ajustadas a cada tipo de ventana',
     alt: 'Ventana protegida con malla de seguridad',
     cover: ventana5,
     images: makeImages(
