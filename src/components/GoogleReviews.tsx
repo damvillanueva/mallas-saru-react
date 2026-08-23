@@ -1,4 +1,4 @@
-import { ArrowUpRight, MessageSquarePlus, ShieldCheck, Star } from 'lucide-react'
+import { ArrowUpRight, MessageSquarePlus, Star } from 'lucide-react'
 import { FcGoogle } from 'react-icons/fc'
 import { googleBusinessUrl, googleReviewUrl, habitissimoProfileUrl } from '../data/siteData'
 
@@ -9,55 +9,54 @@ export function GoogleReviews() {
         <header className="section-intro section-intro--split reviews-heading">
           <div>
             <p className="section-kicker">Opiniones reales</p>
-            <h2>Dos lugares para conocer experiencias reales.</h2>
+            <h2>La tranquilidad también se nota al final.</h2>
           </div>
-          <p className="reviews-heading__lead">Consulta siempre la fuente original, sus fechas y la experiencia completa publicada por cada cliente.</p>
+          <p className="reviews-heading__lead">Conoce experiencias públicas de clientes y revisa cada opinión directamente en su fuente original.</p>
         </header>
 
-        <div className="review-platforms">
-          <article className="review-platform review-platform--google">
-            <div className="review-platform__topline">
-              <a className="review-brand review-brand--google" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer" aria-label="Abrir ficha de Mallas Saru en Google">
+        <article className="review-experience">
+          <div className="review-experience__quote">
+            <div className="review-stars" aria-label="Cinco de cinco estrellas">
+              {[0, 1, 2, 3, 4].map((star) => <Star size={19} fill="currentColor" key={star} />)}
+            </div>
+            <blockquote>“Servicio de alta calidad y profesionalismo.”</blockquote>
+            <div className="review-person">
+              <span className="review-person__avatar" aria-hidden="true">AF</span>
+              <span>
+                <strong>Andrés Fuentes</strong>
+                <small>Opinión pública en Habitissimo · 5/5</small>
+              </span>
+            </div>
+            <a className="review-source-link" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer">
+              Ver opinión en su fuente <ArrowUpRight aria-hidden="true" size={15} />
+            </a>
+          </div>
+
+          <div className="review-experience__trust">
+            <div>
+              <p className="review-trust-kicker">Experiencias verificables</p>
+              <h3>Lo que viven nuestros clientes también cuenta.</h3>
+              <p>Revisa comentarios, fechas y valoraciones en los perfiles públicos de Mallas Saru.</p>
+            </div>
+            <div className="review-sources" aria-label="Fuentes públicas de opiniones">
+              <a className="review-source review-source--google" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
                 <span><FcGoogle aria-hidden="true" /></span>
                 <strong>Google</strong>
+                <small>Ficha pública</small>
+                <ArrowUpRight aria-hidden="true" size={16} />
               </a>
-              <span className="review-source-badge"><ShieldCheck aria-hidden="true" size={14} /> Fuente oficial</span>
-            </div>
-            <div className="review-platform__rating" aria-label="Calificación máxima visible en Google">
-              <strong>Experiencias en Google</strong>
-              <span aria-hidden="true">{[0, 1, 2, 3, 4].map((star) => <Star size={20} fill="currentColor" key={star} />)}</span>
-              <small>Consulta comentarios, fechas y valoración directamente en la ficha.</small>
-            </div>
-            <div className="review-platform__actions">
-              <a className="review-action review-action--primary" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
-                Ver reseñas <ArrowUpRight aria-hidden="true" size={17} />
-              </a>
-              <a className="review-action review-action--secondary" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
-                <MessageSquarePlus aria-hidden="true" size={17} /> Déjanos una reseña
-              </a>
-            </div>
-          </article>
-
-          <article className="review-platform review-platform--habitissimo">
-            <div className="review-platform__topline">
-              <a className="review-brand review-brand--habitissimo" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil público de Mallas Saru en Habitissimo">
+              <a className="review-source review-source--habitissimo" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer">
                 <span aria-hidden="true">h</span>
                 <strong>habitissimo</strong>
+                <small>4,8/5 · 457 opiniones</small>
+                <ArrowUpRight aria-hidden="true" size={16} />
               </a>
-              <span className="review-source-badge"><ShieldCheck aria-hidden="true" size={14} /> Perfil público</span>
             </div>
-            <div className="review-platform__rating">
-              <strong>Más opiniones sobre nuestro trabajo</strong>
-              <p>Revisa en Habitissimo las experiencias publicadas y el perfil comercial de Mallas Saru.</p>
-              <small>El contenido se consulta en su plataforma para mantener visible la fuente original.</small>
-            </div>
-            <a className="review-action review-action--habitissimo" href={habitissimoProfileUrl} target="_blank" rel="noopener noreferrer">
-              Ver opiniones en Habitissimo <ArrowUpRight aria-hidden="true" size={17} />
+            <a className="review-leave-link" href={googleReviewUrl} target="_blank" rel="noopener noreferrer">
+              <MessageSquarePlus aria-hidden="true" size={17} /> Cuéntanos tu experiencia
             </a>
-          </article>
-        </div>
-
-        <p className="reviews-disclosure"><ShieldCheck aria-hidden="true" size={14} /> Los enlaces abren las fuentes originales. No entregamos beneficios a cambio de publicar una opinión.</p>
+          </div>
+        </article>
       </div>
     </section>
   )
