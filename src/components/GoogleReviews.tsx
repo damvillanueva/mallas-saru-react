@@ -8,10 +8,10 @@ export function GoogleReviews() {
       <div className="container">
         <header className="section-intro section-intro--split reviews-heading">
           <div>
-            <p className="section-kicker">Opiniones reales</p>
-            <h2>La tranquilidad también se nota al final.</h2>
+            <p className="section-kicker">Opiniones de clientes</p>
+            <h2>Lo que opinan sobre nuestro trabajo.</h2>
           </div>
-          <p className="reviews-heading__lead">Conoce experiencias públicas de clientes y revisa cada opinión directamente en su fuente original.</p>
+          <p className="reviews-heading__lead">Revisa más comentarios en Google y Habitissimo.</p>
         </header>
 
         <article className="review-experience">
@@ -34,9 +34,9 @@ export function GoogleReviews() {
 
           <div className="review-experience__trust">
             <div>
-              <p className="review-trust-kicker">Experiencias verificables</p>
-              <h3>Lo que viven nuestros clientes también cuenta.</h3>
-              <p>Revisa comentarios, fechas y valoraciones en los perfiles públicos de Mallas Saru.</p>
+              <p className="review-trust-kicker">Más reseñas</p>
+              <h3>Conoce otras experiencias con Mallas Saru.</h3>
+              <p>Puedes revisar todos los comentarios y calificaciones en nuestros perfiles.</p>
             </div>
             <div className="review-sources" aria-label="Fuentes públicas de opiniones">
               <a className="review-source review-source--google" href={googleBusinessUrl} target="_blank" rel="noopener noreferrer">
