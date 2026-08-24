@@ -1,5 +1,5 @@
 import { ArrowUpRight, BadgePercent, Check, MessageCircle } from 'lucide-react'
-import convenioImage from '../assets/img/trabajos/convenios/tarjeta_Vecino_viveLaForida_Mallas_Saru_4.webp'
+import convenioImage from '../assets/img/display/convenio.webp'
 import { sanMiguelConvenioUrl, whatsappConvenioUrl } from '../data/siteData'
 
 export function Convenios() {

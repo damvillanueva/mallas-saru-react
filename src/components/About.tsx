@@ -1,5 +1,5 @@
 import { ArrowRight, BadgeCheck, Clock3, ShieldCheck, Sun, Venus } from 'lucide-react'
-import companyImage from '../assets/img/mallas_Saru.webp'
+import companyImage from '../assets/img/display/company.webp'
 import logo from '../assets/img/logotipo_MallasSaru_Chile.jpg'
 
 const strengths = [
@@ -36,7 +36,7 @@ export function About() {
               <strong>+10</strong><span>años protegiendo espacios</span>
             </div>
             <div className="about-logo-card">
-              <img src={logo} alt="Mallas Saru" />
+              <img src={logo} alt="Mallas Saru" loading="lazy" />
               <p><strong>Empresa chilena</strong><span>Tu seguridad, en nuestras manos.</span></p>
             </div>
           </div>

@@ -1,8 +1,8 @@
 import { ArrowUpRight, Building2, PanelsTopLeft, PawPrint, Wrench } from 'lucide-react'
-import edificio from '../assets/img/trabajos/malla_Edificio/1.webp'
-import residencial from '../assets/img/trabajos/malla_Residencial/2.webp'
-import mascota from '../assets/img/trabajos/clientes_Satisfechos/2.webp'
-import ventana from '../assets/img/trabajos/Ventanas/Ventanas/IMG-20260325-WA0051.webp'
+import edificio from '../assets/img/display/building.webp'
+import residencial from '../assets/img/display/residential-two.webp'
+import mascota from '../assets/img/display/client-two.webp'
+import ventana from '../assets/img/display/window.webp'
 import { services } from '../data/siteData'
 
 const serviceIcons = [Building2, PanelsTopLeft, PawPrint, Wrench]

@@ -7,7 +7,7 @@ Migración del sitio estático [Percy-182/mallas_Saru](https://github.com/Percy-
 - React 19 para la interfaz y el manejo de estado.
 - TypeScript para contratos de datos y detección temprana de errores.
 - Vite para desarrollo local y compilación optimizada.
-- Bootstrap 5 para la grilla y utilidades visuales del diseño original.
+- CSS responsivo propio, sin descargar estilos ni depender de un framework visual en producción.
 - Lucide React para iconos incluidos en la compilación, sin depender de una CDN en producción.
 - Oxlint para validación estática del código.
 - GitHub Actions para validar dependencias, código y compilación en cada cambio.
@@ -23,7 +23,7 @@ Migración del sitio estático [Percy-182/mallas_Saru](https://github.com/Percy-
 - Enlaces oficiales para consultar y publicar reseñas en Google, más acceso al perfil público de Habitissimo.
 - Mensajes de WhatsApp diferenciados por sección para reconocer el origen de cada consulta.
 - Secciones de servicios, protocolo de instalación, marco de seguridad, experiencia y contacto.
-- Fotografías optimizadas en WebP, favicon e imagen Open Graph para compartir el sitio.
+- Fotografías optimizadas en WebP, variantes livianas para las tarjetas, favicon e imagen Open Graph para compartir el sitio.
 - Metadatos SEO, URL canónica, datos estructurados, `robots.txt` y `sitemap.xml` preparados para `mallassaru.cl`.
 
 ## Seguridad y privacidad del código
@@ -63,7 +63,8 @@ src/
 ├── main.tsx      # Punto de entrada
 └── styles.css    # Estilos del sitio
 scripts/
-└── optimize_images.py # Regenera WebP, favicon e imagen social desde recursos reales
+├── create_display_images.py # Regenera las variantes livianas usadas dentro de las secciones
+└── optimize_images.py       # Regenera WebP, favicon e imagen social desde recursos reales
 public/           # Iconos e imagen social listos para la compilación
 ```
 

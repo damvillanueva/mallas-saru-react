@@ -73,7 +73,7 @@ export function Lightbox({ group, onClose }: LightboxProps) {
       </p>
       <img className="lightbox-content" src={image.src} alt={image.title} />
       <div className="lightbox-caption">
-        <h3 className="h4" id="lightbox-title">{image.title}</h3>
+        <h3 id="lightbox-title">{image.title}</h3>
         <span>{image.description}</span>
       </div>
       <button className="lightbox-prev" type="button" aria-label="Imagen anterior" onClick={showPrevious}>

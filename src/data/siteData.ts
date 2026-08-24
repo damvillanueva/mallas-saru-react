@@ -20,6 +20,10 @@ import cliente2 from '../assets/img/trabajos/clientes_Satisfechos/2.webp'
 import cliente3 from '../assets/img/trabajos/clientes_Satisfechos/3.webp'
 import cliente4 from '../assets/img/trabajos/clientes_Satisfechos/4.webp'
 import cliente5 from '../assets/img/trabajos/clientes_Satisfechos/5.webp'
+import edificioCover from '../assets/img/display/building.webp'
+import residencialCover from '../assets/img/display/residential-one.webp'
+import ventanaCover from '../assets/img/display/window.webp'
+import clienteCover from '../assets/img/display/client-one.webp'
 
 export type GalleryImage = {
   src: string
@@ -87,7 +91,7 @@ export const portfolioGroups: PortfolioGroup[] = [
     title: 'Balcones en altura',
     description: 'Instalaciones en departamentos y terrazas',
     alt: 'Malla de seguridad instalada en un balcón de edificio',
-    cover: edificio1,
+    cover: edificioCover,
     images: makeImages(
       [edificio1, edificio2, edificio3, edificio4, edificio5, edificio6, edificio7],
       'Protección de balcón',
@@ -98,7 +102,7 @@ export const portfolioGroups: PortfolioGroup[] = [
     title: 'Ventanas protegidas',
     description: 'Soluciones ajustadas a cada tipo de ventana',
     alt: 'Ventana protegida con malla de seguridad',
-    cover: ventana5,
+    cover: ventanaCover,
     images: makeImages(
       [ventana1, ventana2, ventana3, ventana4, ventana5],
       'Protección de ventana',
@@ -109,7 +113,7 @@ export const portfolioGroups: PortfolioGroup[] = [
     title: 'Espacios residenciales',
     description: 'Casas, terrazas y zonas de uso familiar',
     alt: 'Malla de seguridad instalada en una residencia',
-    cover: residencial1,
+    cover: residencialCover,
     images: makeImages(
       [residencial1, residencial2, residencial3, residencial4, residencial5],
       'Protección residencial',
@@ -120,7 +124,7 @@ export const portfolioGroups: PortfolioGroup[] = [
     title: 'Familias y mascotas',
     description: 'Protección para quienes más quieres',
     alt: 'Mascota en un espacio protegido por Mallas Saru',
-    cover: cliente1,
+    cover: clienteCover,
     images: makeImages(
       [cliente1, cliente2, cliente3, cliente4, cliente5],
       'Espacio protegido',

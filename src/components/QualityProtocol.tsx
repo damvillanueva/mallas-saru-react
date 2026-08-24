@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState, type KeyboardEvent } from 'react'
 import { Check, ChevronDown, ClipboardCheck, FileCheck2, Ruler, Wrench } from 'lucide-react'
 
 const stages = [
@@ -56,8 +56,23 @@ const checks = [
 export function QualityProtocol() {
   const [activeStage, setActiveStage] = useState(0)
   const [activeCheck, setActiveCheck] = useState(0)
+  const stageRefs = useRef<Array<HTMLButtonElement | null>>([])
   const ActiveStageIcon = stageIcons[activeStage]
   const currentStage = stages[activeStage]
+
+  const selectStageFromKeyboard = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let nextIndex = index
+
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % stages.length
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + stages.length) % stages.length
+    else if (event.key === 'Home') nextIndex = 0
+    else if (event.key === 'End') nextIndex = stages.length - 1
+    else return
+
+    event.preventDefault()
+    setActiveStage(nextIndex)
+    stageRefs.current[nextIndex]?.focus()
+  }
 
   return (
     <section className="section protocol-section" id="protocolo">
@@ -82,9 +97,15 @@ export function QualityProtocol() {
                     aria-controls="protocol-stage-detail"
                     aria-selected={activeStage === index}
                     className={`protocol-tab${activeStage === index ? ' is-active' : ''}`}
+                    id={`protocol-stage-${index + 1}`}
                     key={stage.number}
                     onClick={() => setActiveStage(index)}
+                    onKeyDown={(event) => selectStageFromKeyboard(event, index)}
+                    ref={(element) => {
+                      stageRefs.current[index] = element
+                    }}
                     role="tab"
+                    tabIndex={activeStage === index ? 0 : -1}
                     type="button"
                   >
                     <span>{stage.number}</span>
@@ -97,6 +118,7 @@ export function QualityProtocol() {
 
             <article
               aria-live="polite"
+              aria-labelledby={`protocol-stage-${activeStage + 1}`}
               className={`protocol-focus protocol-focus--${activeStage + 1}`}
               id="protocol-stage-detail"
               role="tabpanel"

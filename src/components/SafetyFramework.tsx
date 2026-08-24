@@ -1,6 +1,6 @@
 import { ArrowUpRight, Building2, ClipboardCheck, Landmark, ShieldCheck } from 'lucide-react'
-import familyImage from '../assets/img/trabajos/clientes_Satisfechos/1.webp'
-import petImage from '../assets/img/trabajos/clientes_Satisfechos/2.webp'
+import familyImage from '../assets/img/display/client-one.webp'
+import petImage from '../assets/img/display/client-two.webp'
 import { officialSources } from '../data/siteData'
 
 const leyValentinUrl =

@@ -28,7 +28,7 @@ export function Footer({ onOpenFaq, onOpenGuarantee }: FooterProps) {
         <div className="footer-grid">
           <div className="footer-company">
             <div className="footer-brand">
-              <img src={logo} alt="Logotipo de Mallas Saru" />
+              <img src={logo} alt="Logotipo de Mallas Saru" loading="lazy" />
               <div><strong>Mallas Saru</strong><span>Tu seguridad, en nuestras manos.</span></div>
             </div>
             <p>Instalación, inspección y recambio de mallas para balcones, ventanas y espacios de riesgo en la zona central.</p>
@@ -39,7 +39,7 @@ export function Footer({ onOpenFaq, onOpenGuarantee }: FooterProps) {
             </div>
             <div className="footer-payment">
               <span><CreditCard aria-hidden="true" size={16} /> Medios de pago</span>
-              <img src={webpayLogo} className="webpay-logo" alt="Aceptamos pagos con Webpay" />
+              <img src={webpayLogo} className="webpay-logo" alt="Aceptamos pagos con Webpay" loading="lazy" />
             </div>
           </div>
 

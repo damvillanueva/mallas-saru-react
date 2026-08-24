@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { MessageCircle, ShieldCheck, X } from 'lucide-react'
-import familyImage from '../assets/img/trabajos/clientes_Satisfechos/1.webp'
+import familyImage from '../assets/img/display/client-one.webp'
 import { whatsappPromotionUrl } from '../data/siteData'
 
 const storageKey = 'mallas-saru-promotion-v2-seen-at'
